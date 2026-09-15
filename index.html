@@ -3,92 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFYNIXHUB — Engenharia de Vendas, Tráfego & AI SDR</title>
-  <meta name="description" content="Engenharia de crescimento full-funnel: Tráfego pago Google e Meta Ads, landing pages ultra-rápidas e agentes autônomos de IA integrados ao WhatsApp 24/7." />
-  <meta name="theme-color" content="#050505" />
+  <title>INFYNIXHUB — Engenharia de Vendas, Tráfego &amp; AI SDR</title>
+  <meta name="description" content="Engenharia de crescimento comercial full-funnel: Tráfego pago Google e Meta Ads, landing pages de alta conversão e AI SDR integrado ao WhatsApp 24/7." />
+  <meta name="theme-color" content="#FF5500" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+    :root {
+      --black: #060709;
+      --card-dark: #0E1015;
+      --white: #FFFFFF;
+      --surface-light: #F6F7F9;
+      --orange: #FF5500;
+      --orange-bright: #FF7722;
+      --orange-soft: rgba(255, 85, 0, 0.12);
+      --border-dark: #1E222B;
+      --border-light: #E2E6ED;
+      --muted-dark: #8F96A3;
+      --muted-light: #5A6270;
+      --radius-card: 1.75rem;
+      --radius-pill: 9999px;
+      --container: 82rem;
+    }
+
     body {
-      background: #050505;
-      color: #ffffff;
+      background-color: var(--black);
+      color: #F0F3F8;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
       line-height: 1.5;
     }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-    ul, ol { list-style: none; }
-    img { display: block; max-width: 100%; }
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
-    :focus-visible { outline: 2px solid #ff5500; outline-offset: 2px; }
-
-    /* The rem-based adaptive grid */
-    @media (max-width: 1920px) { html { font-size: 0.833333vw; } }
-    @media (max-width: 1440px) { html { font-size: 1.111111vw; } }
-    @media (max-width: 1024px) { html { font-size: 1.5625vw; } }
-    @media (max-width: 640px)  { html { font-size: 4.444444vw; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-    }
-
-    /* Tokens Paleta: Preto Ônix, Laranja Magma & Branco */
-    :root {
-      --bg: #050505;
-      --surface: #0e0e11;
-      --surface-hover: #16161c;
-      --border: #1f1f26;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --accent: #ff5500;
-      --accent-glow: #ff7700;
-      --accent-soft: rgba(255, 85, 0, 0.12);
-      --muted: #a1a1aa;
-      --subtle: #71717a;
-      --radius-pill: 9999px;
-      --radius-card: 2rem;
-      --radius-card-sm: 1.25rem;
-      --radius-control: 0.875rem;
-      --text-watermark: 12rem;
-      --container-shell: 88rem;
-    }
 
     .shell {
-      max-width: var(--container-shell);
+      max-width: var(--container);
       margin-inline: auto;
       width: 100%;
-    }
-
-    .px-shell {
       padding-inline: 1.25rem;
     }
-    @media (min-width: 640px) {
-      .px-shell { padding-inline: 2rem; }
+    @media (min-width: 768px) {
+      .shell { padding-inline: 2rem; }
     }
 
-    .icon {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.125em;
-    }
-
-    /* Common Components */
+    /* Utilitários Visuais */
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     .eyebrow::before {
@@ -96,2214 +65,924 @@
       width: 0.45rem;
       height: 0.45rem;
       border-radius: 9999px;
-      display: inline-block;
+      background: var(--orange);
+      box-shadow: 0 0 10px var(--orange);
     }
-    .eyebrow.orange { color: #ff7733; }
-    .eyebrow.orange::before { background: var(--accent); box-shadow: 0 0 12px var(--accent); }
-    .eyebrow.light { color: rgba(255,255,255,0.8); }
-    .eyebrow.light::before { background: #ffffff; }
+    .eyebrow-dark { color: #FFAA80; }
+    .eyebrow-light { color: var(--orange); }
 
-    .pill-button {
-      display: inline-block;
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .pill-button:hover { transform: scale(1.04); }
-    }
-    .pill-button-inner {
+    .btn-pill {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
       border-radius: var(--radius-pill);
+      padding: 0.95rem 1.85rem;
       font-size: 0.875rem;
       font-weight: 700;
-      white-space: nowrap;
-      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .pill-button.has-arrow .pill-button-inner {
-      padding: 0.375rem 0.375rem 0.375rem 1.5rem;
-    }
-    .pill-button.no-arrow .pill-button-inner {
-      padding: 0.875rem 1.75rem;
-    }
-    .pill-button.accent .pill-button-inner {
-      background: var(--accent);
-      color: #000000;
-      box-shadow: 0 0 24px rgba(255, 85, 0, 0.35);
-    }
-    .pill-button.outline .pill-button-inner {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.02);
-      color: #ffffff;
-    }
-    .pill-badge {
-      width: 2.25rem;
-      height: 2.25rem;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius-pill);
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .pill-button.accent .pill-badge { background: #000000; color: var(--accent); }
-    .pill-button.outline .pill-badge { background: rgba(255,255,255,0.1); color: #ffffff; }
-
-    .pill-badge svg {
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .pill-button:hover .pill-badge svg.arrow-right { transform: translateX(3px); }
-      .pill-button:hover .pill-badge svg.arrow-up-right { transform: translate(2px, -2px); }
-    }
-
-    .tag-chip {
-      display: inline-flex;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      color: #e4e4e7;
-      border-radius: var(--radius-pill);
-      padding: 0.4rem 0.85rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    .animated-link {
-      display: inline-flex;
-      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      white-space: nowrap;
     }
-    .animated-link span {
-      display: inline-block;
-      opacity: 0.7;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease, color 0.35s ease;
+    .btn-pill:hover {
+      transform: translateY(-2px);
     }
-    @media (hover: hover) and (pointer: fine) {
-      .animated-link:hover span { transform: translateX(4px); opacity: 1; color: var(--accent); }
+    .btn-orange {
+      background: var(--orange);
+      color: #000000;
+      box-shadow: 0 8px 24px rgba(255, 85, 0, 0.35);
     }
-
-    /* Page Loader */
-    #page-loader {
-      position: fixed; inset: 0; z-index: 120;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 2rem; background: #000000; color: #fff;
-      border-radius: 0 0 var(--radius-card) var(--radius-card);
-      will-change: transform;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    .btn-orange:hover {
+      background: var(--orange-bright);
+      box-shadow: 0 12px 28px rgba(255, 85, 0, 0.45);
     }
-    .loader-center {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      gap: 1.25rem;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+    .btn-dark {
+      background: #000000;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
-    .loader-brand {
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em;
+    .btn-dark:hover {
+      background: #1A1A1A;
     }
-    @media (min-width: 640px) { .loader-brand { font-size: 2rem; } }
-    .loader-brand svg { font-size: 2rem; color: var(--accent); }
-    .loader-tagline {
-      max-width: 30ch; font-size: 0.875rem; color: rgba(255,255,255,0.6);
+    .btn-outline-white {
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.05);
+      color: #FFFFFF;
     }
-    .loader-progress-wrap {
-      width: min(22rem, 72vw);
-      display: flex; flex-direction: column; gap: 0.75rem;
-    }
-    .loader-track {
-      width: 100%; height: 2px; background: rgba(255,255,255,0.1);
-      position: relative; overflow: hidden;
-    }
-    .loader-bar {
-      position: absolute; left: 0; top: 0; bottom: 0;
-      background: var(--accent); width: 0%;
-      box-shadow: 0 0 14px var(--accent);
-      transition: width 0.1s ease-out;
-    }
-    .loader-status {
-      display: flex; justify-content: space-between;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; color: rgba(255,255,255,0.5);
-    }
-    .loader-counter {
-      font-variant-numeric: tabular-nums;
-      color: var(--accent);
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #FFFFFF;
     }
 
-    /* Header */
+    /* 1. Header Fixo */
     #site-header {
-      position: absolute; inset-inline: 0; top: 0; z-index: 50;
-      opacity: 0; transform: translateY(-14px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      position: fixed;
+      top: 0;
+      inset-inline: 0;
+      z-index: 90;
+      background: rgba(6, 7, 9, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
     }
     .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1.5rem; padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
     }
-    @media (min-width: 640px) {
-      .header-inner { padding: 1.5rem 2rem; }
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-decoration: none;
     }
-    .brand-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    .brand-logo svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: var(--orange);
     }
-    @media (hover: hover) and (pointer: fine) {
-      .brand-btn:hover { transform: scale(1.04); }
+    .brand-logo span span {
+      color: var(--orange);
     }
-    .brand-btn svg { font-size: 1.4rem; color: var(--accent); }
-
-    .primary-nav {
-      display: none; align-items: center; gap: 2rem;
-      font-size: 0.875rem; font-weight: 600;
+    .header-nav {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.875rem;
+      font-weight: 600;
     }
     @media (min-width: 1024px) {
-      .primary-nav { display: flex; }
+      .header-nav { display: flex; }
     }
-    .nav-btn {
-      position: relative;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease, color 0.35s ease;
-      opacity: 0.75;
-      display: inline-flex; align-items: center; gap: 0.25rem;
+    .header-nav a {
+      color: var(--muted-dark);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .nav-btn:hover { opacity: 1; color: var(--accent); }
-    .nav-btn[aria-current="page"] { opacity: 1; color: #fff; }
+    .header-nav a:hover {
+      color: var(--orange);
+    }
 
-    .header-right {
-      display: flex; align-items: center; gap: 0.75rem;
+    /* 2. Hero (Faixa Preta Noturna com Energia Laranja) */
+    .hero-section {
+      position: relative;
+      padding-top: 7rem;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 85, 0, 0.18) 0%, transparent 50%),
+                  radial-gradient(circle at 10% 80%, rgba(255, 85, 0, 0.08) 0%, transparent 40%),
+                  var(--black);
     }
-    .clock-chip {
-      display: none; align-items: center; gap: 0.75rem;
-      border: 1px solid var(--border);
-      background: rgba(14, 14, 17, 0.7);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius-control);
-      padding: 0.5rem 0.85rem;
-      font-size: 0.75rem;
-      color: var(--muted);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        min-height: 80vh;
+      }
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      margin-top: 1rem;
+    }
+    .hero-title .glow-orange {
+      color: var(--orange);
+      text-shadow: 0 0 35px rgba(255, 85, 0, 0.4);
+    }
+    .hero-desc {
+      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      color: var(--muted-dark);
+      margin-top: 1.5rem;
+      max-width: 36rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      color: var(--muted-dark);
+    }
+    .stars { color: var(--orange); }
+
+    /* Card Interativo Hero (Mobile/Desktop) */
+    .hero-preview-box {
+      border-radius: var(--radius-card);
+      background: linear-gradient(145deg, #141720 0%, #0C0D12 100%);
+      border: 1px solid var(--border-dark);
+      box-shadow: 0 25px 50px -15px rgba(0,0,0,0.8), 0 0 30px rgba(255,85,0,0.1);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .status-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 9999px;
+      background: #00E676;
+      box-shadow: 0 0 8px #00E676;
+      display: inline-block;
+      margin-right: 0.4rem;
+    }
+    .sim-chat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .sim-msg {
+      padding: 0.85rem 1.1rem;
+      border-radius: 1.1rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      max-width: 88%;
+    }
+    .sim-lead {
+      background: #1D2230;
+      color: #E2E8F0;
+      align-self: flex-start;
+      border-bottom-left-radius: 0.2rem;
+    }
+    .sim-ai {
+      background: var(--orange);
+      color: #000000;
+      font-weight: 600;
+      align-self: flex-end;
+      border-bottom-right-radius: 0.2rem;
+      box-shadow: 0 6px 18px rgba(255,85,0,0.25);
+    }
+
+    /* 3. FAIXA CLARA / EDITORIAL BRANCA (Contraste Máximo) */
+    .light-band {
+      background-color: var(--white);
+      color: #0F1218;
+      padding: 6rem 0;
+      border-top: 4px solid var(--orange);
+    }
+    .light-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #060709;
+    }
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
     }
     @media (min-width: 768px) {
-      .clock-chip { display: flex; }
+      .cards-grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
-    .clock-time { min-width: 3.5rem; font-variant-numeric: tabular-nums; font-weight: 700; color: #fff; }
-    .clock-sep { color: var(--subtle); }
-    .clock-date { font-weight: 500; }
+    .white-card {
+      background: var(--surface-light);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .white-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.12);
+      border-color: var(--orange);
+    }
+    .card-idx {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .white-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #060709;
+      margin-bottom: 0.75rem;
+    }
+    .white-card p {
+      font-size: 0.95rem;
+      color: var(--muted-light);
+      line-height: 1.55;
+    }
 
-    .menu-btn {
-      border: 1px solid var(--border);
-      background: rgba(14, 14, 17, 0.7);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius-control);
-      padding: 0.5rem 1rem;
+    /* 4. SEÇÃO DO OBJETO INTERATIVO 3D (EFEITO CAN / NÚCLEO INFYNIX) */
+    .interactive-stage-section {
+      background: radial-gradient(circle at center, #191E2B 0%, #060709 75%);
+      padding: 6rem 0;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .stage-canvas-wrap {
+      width: 100%;
+      height: 380px;
+      margin: 1.5rem auto;
+      position: relative;
+      touch-action: none;
+    }
+    @media (min-width: 768px) {
+      .stage-canvas-wrap { height: 440px; max-width: 800px; }
+    }
+    #infynix-canvas-3d {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #infynix-canvas-3d:active { cursor: grabbing; }
+    .stage-badge-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      transition: background-color 0.25s ease, border-color 0.25s ease;
-    }
-    .menu-btn:hover { background: var(--surface-hover); border-color: var(--accent); }
-    .menu-btn-inner {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .menu-btn:hover .menu-btn-inner { transform: scale(1.05); }
-    }
-    .menu-text { display: none; }
-    @media (min-width: 640px) { .menu-text { display: inline; } }
-
-    /* Hero Section */
-    #home {
-      position: relative; isolation: isolate; overflow: hidden;
-      border-radius: 0 0 var(--radius-card) var(--radius-card);
-      background: #000000;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-canvas-wrap {
-      position: absolute; inset: 0; z-index: 0; pointer-events: none;
-    }
-    .hero-canvas-wrap canvas {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-    }
-    .hero-vignette {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: radial-gradient(circle at center, transparent 30%, #050505 95%);
-    }
-    .hero-watermark {
-      pointer-events: none; position: absolute; inset-inline: 0; bottom: 6rem; z-index: 1;
-      text-align: center; user-select: none; font-weight: 800; line-height: 1;
-      font-size: var(--text-watermark); color: rgba(255,255,255,0.02);
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .hero-grid {
-      position: relative; z-index: 20;
-      display: flex; flex-direction: column; gap: 2rem;
-      padding: 7.5rem 1.25rem 5rem;
-    }
-    @media (min-width: 640px) {
-      .hero-grid { padding-inline: 2rem; }
-    }
-    @media (min-width: 1024px) {
-      .hero-grid {
-        display: grid; min-height: 100lvh;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 2.5rem;
-        padding: 9.5rem 2rem 7rem;
-      }
-    }
-
-    .hero-left {
-      display: flex; flex-direction: column; gap: 1.75rem;
-    }
-    @media (min-width: 1024px) {
-      .hero-left { grid-column: span 7; }
-    }
-    .hero-eyebrow {
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .hero-h1 {
-      max-width: 18ch;
-      font-size: 2.25rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
-    }
-    @media (min-width: 640px) { .hero-h1 { font-size: 3rem; } }
-    @media (min-width: 768px) { .hero-h1 { font-size: 3.75rem; } }
-
-    .line-mask { display: block; overflow: hidden; }
-    .line-reveal {
-      display: block;
-      transform: translateY(100%);
-      opacity: 0;
-      transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    .text-gradient {
-      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .rating-row {
-      display: flex; align-items: center; gap: 0.75rem;
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .stars-span { color: var(--accent); font-size: 0.95rem; display: inline-flex; gap: 0.15rem; }
-    .rating-text { font-size: 0.875rem; font-weight: 600; color: var(--muted); }
-
-    .cta-row {
-      display: flex; flex-wrap: wrap; gap: 0.75rem;
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .hero-right {
-      display: flex; flex-direction: column; align-items: flex-start; gap: 2rem;
-    }
-    @media (min-width: 1024px) {
-      .hero-right {
-        grid-column: span 5;
-        align-items: flex-end;
-      }
-    }
-
-    /* Hero AI Simulator Card */
-    .hero-card {
-      width: 100%; max-width: 24rem;
-      border-radius: var(--radius-card-sm);
-      background: rgba(14, 14, 17, 0.85);
-      padding: 0.5rem;
-      box-shadow: 0 15px 35px -10px rgba(0,0,0,0.8);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-      opacity: 0; transform: translateY(16px) scale(0.96);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    @media (min-width: 1024px) { .hero-card { width: 21rem; } }
-
-    .hero-card-clickable {
-      display: flex; gap: 0.5rem; cursor: pointer; border-radius: var(--radius-control);
-    }
-    .hero-card-tile {
-      aspect-ratio: 1; width: 6rem;
-      display: grid; place-items: center;
-      border-radius: var(--radius-control);
-      background: #000000; font-size: 1.875rem; color: #fff;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-    .hero-card-tile svg { color: var(--accent); }
-    .hero-card-panel {
-      flex: 1; border-radius: var(--radius-control);
-      background: rgba(22, 22, 28, 0.7); padding: 0.75rem;
-      display: flex; flex-direction: column; justify-content: space-between;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-    .hero-card-text-slot {
-      position: relative; min-height: 3.5rem;
-    }
-    .hero-card-content {
-      position: absolute; inset: 0;
-      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), opacity 0.35s ease;
-    }
-    .hero-card-caption {
-      font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.25rem;
-    }
-    .hero-card-title {
-      font-size: 0.875rem; font-weight: 600; line-height: 1.35; color: #fff;
-    }
-    .hero-card-bottom {
-      display: flex; align-items: center; justify-content: space-between;
+      color: var(--muted-dark);
       margin-top: 0.5rem;
     }
-    .hero-dashes { display: flex; align-items: center; gap: 0.25rem; }
-    .hero-dash {
-      height: 0.25rem; border-radius: var(--radius-pill);
-      background: rgba(255,255,255,0.2); width: 0.375rem;
-      transition: width 0.3s ease, background-color 0.3s ease;
-    }
-    .hero-dash.active { width: 1rem; background: var(--accent); }
-    .hero-card-arrows { display: flex; gap: 0.375rem; }
-    .hero-arrow-btn {
-      width: 1.75rem; height: 1.75rem; display: grid; place-items: center;
-      border-radius: var(--radius-pill); background: rgba(255,255,255,0.05);
-      color: rgba(255,255,255,0.7); border: 1px solid var(--border);
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .hero-arrow-btn:hover { background: var(--accent); color: #000000; }
-    .hero-arrow-btn.prev svg { transform: rotate(180deg); }
 
-    /* Partners / Stack */
-    .partners-wrap {
-      width: 100%; max-width: 24rem;
-      opacity: 0; transform: translateY(14px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    /* 5. FAIXA LARANJA MAGMA ENERGÉTICA (Callout de Alto Impacto) */
+    .orange-callout-band {
+      background: linear-gradient(135deg, #FF5500 0%, #CC3700 100%);
+      color: #000000;
+      padding: 5rem 0;
+      position: relative;
     }
-    @media (min-width: 1024px) {
-      .partners-wrap { width: 21rem; }
+    .orange-band-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
     }
-    .partners-label {
-      margin-bottom: 0.75rem; font-size: 0.75rem; font-weight: 700;
-      color: var(--subtle); text-transform: uppercase; letter-spacing: 0.05em; text-align: left;
-    }
-    @media (min-width: 1024px) {
-      .partners-label { text-align: right; }
-    }
-    .partners-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      column-gap: 0.75rem; row-gap: 0.75rem;
-    }
-    .partner-item {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.75rem; font-weight: 600; color: var(--muted);
-      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), opacity 0.35s ease, color 0.35s ease;
-    }
-    .partner-item svg { font-size: 0.875rem; color: var(--accent); opacity: 0.8; }
-    @media (hover: hover) and (pointer: fine) {
-      .partner-item:hover { transform: translateY(-2px); color: #ffffff; }
-    }
-
-    /* Bottom status bar */
-    .hero-status-bar {
-      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
-      border-top: 1px solid var(--border-subtle); padding: 1.25rem;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--subtle);
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-    @media (min-width: 640px) { .hero-status-bar { padding-inline: 2rem; } }
-    .hero-status-center { display: none; }
-    @media (min-width: 640px) { .hero-status-center { display: block; } }
-
-    /* About Section */
-    #about { background: #050505; position: relative; border-bottom: 1px solid var(--border); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr; align-items: center; gap: 3rem;
-      padding: 5rem 1.25rem;
-    }
-    @media (min-width: 640px) { .about-grid { padding-inline: 2rem; } }
-    @media (min-width: 1024px) {
-      .about-grid { grid-template-columns: 1fr 1fr; padding-block: 7rem; }
-    }
-    .about-left {
-      position: relative; min-height: 14rem; display: flex; flex-direction: column; justify-content: space-between;
-    }
-    @media (min-width: 1024px) { .about-left { min-height: 20rem; } }
-    .about-globe-bg {
-      position: absolute; left: -1rem; top: 50%; transform: translateY(-50%);
-      font-size: 12rem; color: rgba(255,255,255,0.03); pointer-events: none;
-    }
-    @media (min-width: 640px) { .about-globe-bg { font-size: 16rem; } }
-    @media (min-width: 1024px) { .about-globe-bg { left: -1.5rem; font-size: 20rem; } }
-    .about-callout {
-      position: relative; display: flex; align-items: center; gap: 0.75rem;
-      font-size: 0.875rem; color: var(--muted);
-      opacity: 0; transform: translateY(12px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .about-callout svg { font-size: 1.5rem; color: var(--accent); flex-shrink: 0; }
-    .about-callout span { max-width: 16rem; }
-
-    .about-right { display: flex; flex-direction: column; gap: 2.5rem; }
-    .about-h2 {
-      font-size: 1.5rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em;
-    }
-    @media (min-width: 640px) { .about-h2 { font-size: 1.875rem; } }
-    .word-wrap {
-      display: inline-block; white-space: pre-wrap;
-      opacity: 0; transform: translateY(24px);
-      transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    .about-muted { color: var(--subtle); }
-
-    .about-footer-row {
-      display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
-      border-top: 1px solid var(--border); padding-top: 1.5rem;
-      opacity: 0; transform: translateY(12px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .social-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--subtle); margin-bottom: 0.5rem; font-weight: 700; }
-    .social-chips { display: flex; gap: 0.5rem; }
-    .social-chip {
-      width: 2.25rem; height: 2.25rem; display: grid; place-items: center;
-      border-radius: var(--radius-pill); font-size: 0.875rem;
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      cursor: pointer;
-    }
-    .social-chip svg {
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .social-chip:hover svg { transform: scale(1.18); color: var(--accent); }
-    }
-
-    /* 4-Pill Formula Band */
-    .create-band-section { background: #050505; border-bottom: 1px solid var(--border); }
-    .create-band-list {
-      display: flex; flex-direction: column; gap: 0.75rem;
-      padding: 2.5rem 1.25rem;
-    }
-    @media (min-width: 640px) {
-      .create-band-list { flex-direction: row; gap: 1rem; padding-inline: 2rem; }
-    }
-    .create-band-item {
-      flex: 1; opacity: 0; transform: translateY(28px);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    .create-band-tile {
-      display: grid; place-items: center; height: 6rem;
-      border-radius: var(--radius-pill); font-size: 1.75rem; font-weight: 800;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-      cursor: default;
-    }
-    @media (min-width: 640px) {
-      .create-band-tile { height: 9.5rem; font-size: 2.25rem; }
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .create-band-tile:hover { transform: scale(1.03); }
-    }
-    .create-band-tile.light { background: var(--surface); color: #fff; border: 1px solid var(--border); }
-    .create-band-tile.accent { background: linear-gradient(135deg, #ff5500, #cc3300); color: #000000; }
-    .create-band-tile.dark { background: #000000; color: #fff; border: 1px solid var(--border); }
-    .create-band-tile.ghost { background: rgba(14, 14, 17, 0.4); color: var(--subtle); border: 1px dashed var(--border); }
-    .create-band-tile.dark svg { font-size: 2.25rem; }
-    @media (min-width: 640px) {
-      .create-band-tile.dark svg { font-size: 3rem; }
-    }
-
-    /* Bento Grid Solutions */
-    #works { background: #050505; border-bottom: 1px solid var(--border); }
-    .portfolio-shell { padding: 2.5rem 1.25rem 5rem; }
-    @media (min-width: 640px) { .portfolio-shell { padding-inline: 2rem; } }
-    @media (min-width: 1024px) { .portfolio-shell { padding-bottom: 7rem; } }
-    .portfolio-header {
-      display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 3.5rem;
-    }
-    .eyebrow-pill {
-      border: 1px solid var(--border); border-radius: var(--radius-pill);
-      padding: 0.375rem 1rem; margin-bottom: 1rem;
-      background: rgba(255,255,255,0.02);
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .portfolio-h2 {
-      font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; width: fit-content;
-    }
-    @media (min-width: 640px) { .portfolio-h2 { font-size: 3rem; } }
-
-    .portfolio-grid {
-      display: grid; grid-template-columns: 1fr; gap: 1.5rem;
-    }
-    @media (min-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
-
-    .portfolio-item {
-      opacity: 0; transform: translateY(48px);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    .portfolio-card {
-      position: relative; min-height: 22rem; overflow: hidden;
-      border-radius: var(--radius-card); background: var(--surface);
-      padding: 1.5rem; color: #fff;
-      border: 1px solid var(--border);
-      display: block;
-      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), border-color 0.35s ease;
-    }
-    @media (min-width: 640px) {
-      .portfolio-card { min-height: 26rem; padding: 2rem; }
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .portfolio-card:hover { transform: translateY(-8px) scale(1.012); border-color: rgba(255, 85, 0, 0.4); }
-    }
-
-    .portfolio-meta {
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--muted); position: relative; z-index: 2; font-weight: 700;
-    }
-    .portfolio-badge {
-      width: 2.75rem; height: 2.75rem; display: grid; place-items: center;
-      border-radius: var(--radius-pill); background: rgba(255,255,255,0.05);
-      color: #fff; border: 1px solid var(--border);
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .portfolio-card:hover .portfolio-badge { transform: rotate(45deg) scale(1.08); background: var(--accent); color: #000000; }
-    }
-    .portfolio-watermark {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      gap: 0.25rem; pointer-events: none; z-index: 1;
-    }
-    .portfolio-watermark svg { font-size: 5.5rem; color: rgba(255,255,255,0.03); }
-
-    .portfolio-bottom {
-      position: absolute; inset-inline: 1.5rem; bottom: 1.5rem; z-index: 2;
-    }
-    @media (min-width: 640px) {
-      .portfolio-bottom { inset-inline: 2rem; bottom: 2rem; }
-    }
-    .portfolio-title {
-      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em;
-    }
-    @media (min-width: 640px) { .portfolio-title { font-size: 1.875rem; } }
-    .portfolio-desc {
-      margin-top: 0.5rem; max-width: 28rem; font-size: 0.875rem; color: var(--muted);
-    }
-    .portfolio-tags {
-      margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem;
-    }
-
-    /* Services Rows */
-    #services { background: #050505; border-bottom: 1px solid var(--border); }
-    .services-shell { padding: 5rem 1.25rem; }
-    @media (min-width: 640px) { .services-shell { padding-inline: 2rem; } }
-    @media (min-width: 1024px) { .services-shell { padding-block: 7rem; } }
-    .services-eyebrow {
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .services-h2 {
-      margin: 1.25rem 0 3rem; max-width: 18ch;
-      font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em;
-    }
-    @media (min-width: 640px) {
-      .services-h2 { margin-bottom: 3.5rem; font-size: 3rem; }
-    }
-
-    .service-row-item {
-      border-top: 1px solid var(--border);
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    .service-row-item:first-child { border-top: none; }
-    .service-link {
-      display: flex; align-items: center; gap: 1rem;
-      border-radius: var(--radius-card-sm);
-      padding: 1.5rem;
-      background: transparent;
-      transition: background-color 0.35s cubic-bezier(0.2,0.8,0.2,1), padding 0.35s cubic-bezier(0.2,0.8,0.2,1);
-    }
-    @media (min-width: 640px) {
-      .service-link { gap: 1.5rem; padding-block: 2rem; }
-    }
-    @media (hover: hover) and (pointer: fine) {
-      .service-link:hover {
-        background: var(--surface);
-        padding-left: 2rem;
-        padding-right: 1.25rem;
+    @media (min-width: 768px) {
+      .orange-band-content {
+        flex-direction: row;
+        align-items: center;
       }
     }
-    .service-idx {
-      width: 1.75rem; font-size: 0.875rem; font-weight: 800; color: var(--accent);
+    .orange-band-title {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #000000;
+      max-width: 42rem;
     }
-    @media (min-width: 640px) { .service-idx { width: 2.5rem; } }
-    .service-title {
-      flex: 1; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em;
-    }
-    @media (min-width: 640px) { .service-title { font-size: 1.875rem; } }
-    @media (min-width: 768px) { .service-title { font-size: 2.25rem; } }
-
-    .service-desc {
-      display: none; max-width: 22rem; font-size: 0.875rem; color: var(--muted);
-    }
-    @media (min-width: 1024px) { .service-desc { display: block; } }
-
-    .service-badge {
-      width: 2.5rem; height: 2.5rem; display: grid; place-items: center;
-      border-radius: var(--radius-pill); background: var(--surface-hover); color: #fff;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.2s ease;
-    }
-    @media (min-width: 640px) { .service-badge { width: 3rem; height: 3rem; } }
-    @media (hover: hover) and (pointer: fine) {
-      .service-link:hover .service-badge { transform: translateX(5px); background: var(--accent); color: #000000; }
+    .orange-band-title span {
+      color: #FFFFFF;
     }
 
-    /* Stats Panel */
-    .stats-section { background: #050505; }
-    .stats-shell { padding: 5rem 1.25rem; }
-    @media (min-width: 640px) { .stats-shell { padding-inline: 2rem; } }
-    @media (min-width: 1024px) { .stats-shell { padding-block: 7rem; } }
+    /* 6. FAQ & Diagnóstico (Preto Profundo) */
+    .faq-section {
+      background-color: var(--black);
+      padding: 6rem 0;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 3rem;
+      max-width: 52rem;
+      margin-inline: auto;
+    }
+    .faq-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+    }
+    .faq-card h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .faq-card p {
+      font-size: 0.9rem;
+      color: var(--muted-dark);
+      line-height: 1.6;
+    }
 
-    .stats-panel {
-      border-radius: var(--radius-card); background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 3rem 1.5rem; color: #fff;
-      opacity: 0; transform: translateY(40px) scale(0.99);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    /* 7. Modal de Diagnóstico */
+    #diag-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(16px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
-    @media (min-width: 640px) { .stats-panel { padding: 4rem 2rem; } }
-    @media (min-width: 768px) { .stats-panel { padding-inline: 4rem; } }
-
-    .stats-h2 {
-      margin-top: 1rem; max-width: 20ch;
-      font-size: 1.875rem; font-weight: 800; letter-spacing: -0.01em;
+    @media (min-width: 640px) {
+      #diag-modal { align-items: center; }
     }
-    @media (min-width: 768px) { .stats-h2 { font-size: 2.25rem; } }
-
-    .stats-grid {
-      margin-top: 3.5rem; display: grid; grid-template-columns: repeat(2, 1fr);
-      column-gap: 2rem; row-gap: 3rem;
+    #diag-modal.active {
+      opacity: 1;
+      pointer-events: auto;
     }
-    @media (min-width: 1024px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-
-    .stat-item {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    .modal-box {
+      width: 100%;
+      max-width: 32rem;
+      background: #0E1015;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+      position: relative;
     }
-    .stat-number-wrap {
-      font-size: 3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1;
-      font-variant-numeric: tabular-nums; color: var(--accent);
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.06);
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
     }
-    @media (min-width: 640px) { .stat-number-wrap { font-size: 3.75rem; } }
-    @media (min-width: 768px) { .stat-number-wrap { font-size: 4.5rem; } }
-    .stat-label {
-      margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted); font-weight: 500;
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
+    .form-input {
+      width: 100%;
+      background: #060709;
+      border: 1px solid var(--border-dark);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      color: #FFFFFF;
+      font-family: inherit;
+      outline: none;
+    }
+    .form-input:focus { border-color: var(--orange); }
 
     /* Footer */
-    #site-footer {
-      position: relative; overflow: hidden;
-      border-radius: var(--radius-card) var(--radius-card) 0 0;
-      background: #000000; color: #fff;
-      border-top: 1px solid var(--border);
-    }
-    .footer-shell {
-      position: relative; z-index: 10; padding: 5rem 1.25rem 2.5rem;
-    }
-    @media (min-width: 640px) { .footer-shell { padding-inline: 2rem; } }
-    @media (min-width: 1024px) { .footer-shell { padding-top: 6rem; } }
-
-    .footer-cta-row {
-      display: flex; flex-direction: column; gap: 2rem;
-      border-bottom: 1px solid var(--border); padding-bottom: 4rem;
-    }
-    @media (min-width: 1024px) {
-      .footer-cta-row { flex-direction: row; align-items: flex-end; justify-content: space-between; }
-    }
-    .footer-h2 {
-      max-width: 16ch; font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em;
-    }
-    @media (min-width: 640px) { .footer-h2 { font-size: 3rem; } }
-    @media (min-width: 768px) { .footer-h2 { font-size: 3.75rem; } }
-
-    .footer-cols {
-      display: grid; grid-template-columns: 1fr; gap: 3rem; padding-block: 4rem;
-    }
-    @media (min-width: 768px) { .footer-cols { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .footer-cols { grid-template-columns: repeat(4, 1fr); } }
-
-    .footer-brand-title {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 1.3rem; font-weight: 800; margin-bottom: 0.75rem;
-    }
-    .footer-brand-title svg { font-size: 1.4rem; color: var(--accent); }
-    .footer-tagline {
-      max-width: 20rem; font-size: 0.875rem; color: var(--muted);
-    }
-
-    .footer-col-title {
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--subtle); margin-bottom: 1.25rem; font-weight: 700;
-    }
-    .footer-links-list { display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; }
-
-    .footer-legal-bar {
-      display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1rem;
-      border-top: 1px solid var(--border); padding-top: 2rem;
-      font-size: 0.75rem; color: var(--subtle);
-    }
-    @media (min-width: 640px) {
-      .footer-legal-bar { flex-direction: row; }
-    }
-    .legal-links { display: flex; gap: 1.5rem; }
-
-    .footer-watermark {
-      position: absolute; inset-inline: 0; bottom: -1.5rem; z-index: 0;
-      text-align: center; pointer-events: none; user-select: none;
-      font-weight: 800; line-height: 1; font-size: var(--text-watermark);
-      color: rgba(255,255,255,0.02);
-    }
-
-    /* NavMenu Overlay */
-    #nav-menu {
-      position: fixed; inset: 0; z-index: 115;
-      display: flex; flex-direction: column; background: #000000; color: #fff;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    #nav-menu.open {
-      opacity: 1; pointer-events: auto;
-    }
-    .nav-menu-top {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem;
-    }
-    @media (min-width: 640px) { .nav-menu-top { padding: 1.5rem 2rem; } }
-    .nav-menu-brand {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 1.3rem; font-weight: 800;
-    }
-    .nav-menu-brand svg { font-size: 1.4rem; color: var(--accent); }
-    .nav-menu-close {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid var(--border); border-radius: var(--radius-control);
-      padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
-      transition: border-color 0.2s ease, color 0.2s ease;
-    }
-    .nav-menu-close:hover { border-color: var(--accent); color: #fff; }
-
-    .nav-menu-center {
-      flex: 1; display: flex; flex-direction: column; justify-content: center;
-    }
-    .nav-menu-list {
-      display: flex; flex-direction: column; gap: 0.25rem;
-    }
-    .nav-menu-item-btn {
-      display: flex; align-items: baseline; gap: 1rem; padding-block: 0.5rem;
-      text-align: left; font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em;
-      transform: translateY(1rem); opacity: 0;
-      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-    }
-    @media (min-width: 640px) { .nav-menu-item-btn { font-size: 3.75rem; } }
-    #nav-menu.open .nav-menu-item-btn {
-      transform: translateY(0); opacity: 1;
-    }
-    .nav-menu-idx {
-      font-size: 1rem; font-weight: 600; color: var(--subtle);
-      transition: color 0.3s ease;
-    }
-    .nav-menu-label {
-      color: var(--muted);
-      transition: color 0.3s ease;
-    }
-    .nav-menu-item-btn:hover .nav-menu-idx { color: var(--accent); }
-    .nav-menu-item-btn:hover .nav-menu-label { color: #fff; }
-
-    .nav-menu-bottom {
-      display: flex; flex-direction: column; gap: 0.75rem;
-      border-top: 1px solid var(--border); padding: 1.5rem 1.25rem;
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--subtle); font-weight: 600;
-    }
-    @media (min-width: 640px) {
-      .nav-menu-bottom { flex-direction: row; justify-content: space-between; padding-inline: 2rem; }
-    }
-    .nav-menu-bottom-btn {
-      color: var(--accent); font-weight: 700;
-      transition: color 0.2s ease;
-      cursor: pointer;
-    }
-    .nav-menu-bottom-btn:hover { text-decoration: underline; }
-
-    /* Request Diagnostic Modal */
-    #request-modal {
-      position: fixed; inset: 0; z-index: 110;
-      display: flex; align-items: flex-end; justify-content: center; padding: 1rem;
-      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(16px);
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
-    @media (min-width: 640px) { #request-modal { align-items: center; } }
-    #request-modal.open { opacity: 1; pointer-events: auto; }
-
-    .modal-panel {
-      position: relative; width: 100%; max-width: 32rem; overflow: hidden;
-      border-radius: var(--radius-card); background: var(--surface); padding: 1.5rem;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9);
-      border: 1px solid var(--border);
-      transform: translateY(28px);
-      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    @media (min-width: 640px) { .modal-panel { padding: 2rem; } }
-    #request-modal.open .modal-panel { transform: translateY(0); }
-
-    .modal-close-btn {
-      position: absolute; right: 1rem; top: 1rem; width: 2.25rem; height: 2.25rem;
-      display: grid; place-items: center; border-radius: var(--radius-pill);
-      background: rgba(255,255,255,0.05); color: var(--muted);
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .modal-close-btn:hover { background: var(--surface-hover); color: #fff; }
-
-    .modal-header { margin-bottom: 1.5rem; }
-    .modal-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.875rem; font-weight: 700; color: var(--accent); margin-bottom: 0.375rem;
-    }
-    .modal-tag::before {
-      content: ""; width: 0.4rem; height: 0.4rem; border-radius: 9999px; background: var(--accent);
-    }
-    .modal-h2 {
-      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; color: #fff;
-    }
-    @media (min-width: 640px) { .modal-h2 { font-size: 1.875rem; } }
-
-    .modal-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-field { display: flex; flex-direction: column; gap: 0.375rem; }
-    .field-label {
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; color: var(--muted);
-    }
-    .field-input, .field-textarea, .field-select {
-      width: 100%; border: 1px solid var(--border);
-      background: #000000; border-radius: var(--radius-control);
-      padding: 0.75rem 1rem; font-size: 0.875rem; outline: none;
-      font-family: inherit; color: #fff;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
-    }
-    .field-input:focus, .field-textarea:focus, .field-select:focus {
-      border-color: var(--accent);
-    }
-    .field-textarea { resize: none; }
-
-    .form-bottom-row {
-      margin-top: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    }
-    .form-note { font-size: 0.75rem; color: var(--subtle); }
-
-    .modal-success {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      padding-block: 2rem; gap: 1rem;
-    }
-    .success-badge {
-      width: 3.5rem; height: 3.5rem; display: grid; place-items: center;
-      border-radius: var(--radius-pill); background: rgba(255, 85, 0, 0.1); color: var(--accent); font-size: 1.5rem;
-      border: 1px solid rgba(255, 85, 0, 0.3);
-    }
-    .success-desc {
-      max-width: 32ch; font-size: 0.875rem; color: var(--muted);
+    .site-footer {
+      background-color: #030405;
+      border-top: 1px solid var(--border-dark);
+      padding: 4rem 0 2rem;
+      font-size: 0.85rem;
+      color: var(--muted-dark);
     }
   </style>
-
-  <script type="importmap">
-  {
-    "imports": {
-      "lenis": "https://unpkg.com/lenis@1.3.23/dist/lenis.mjs"
-    }
-  }
-  </script>
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
-  <a href="#main" class="sr-only">Pular para o conteúdo</a>
-
-  <!-- SVG Sprite definitions -->
-  <svg style="display:none;" aria-hidden="true">
-    <!-- Logomarca InfynixHub Oficial -->
-    <symbol id="icon-infynix" viewBox="0 0 70 70">
-      <path d="M 28,35 C 12,17 4,27 4,35 C 4,43 14,53 28,35 C 42,17 52,17 66,35 C 76,48 66,57 52,35 Z" 
-            fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-      <line x1="26" y1="21" x2="54" y2="49" stroke="#ff7733" stroke-width="4.5" stroke-linecap="round" />
-      <circle cx="40" cy="35" r="4.5" fill="#ffffff" />
-    </symbol>
-    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
-    </symbol>
-    <symbol id="icon-arrow-up-right" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/>
-    </symbol>
-    <symbol id="icon-star" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/>
-    </symbol>
-    <symbol id="icon-globe" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9.25" fill="none" stroke="currentColor" stroke-width="1.4"/>
-      <path fill="none" stroke="currentColor" stroke-width="1.4" d="M12 2.75c2.6 2.3 4 5.8 4 9.25s-1.4 6.95-4 9.25c-2.6-2.3-4-5.8-4-9.25s1.4-6.95 4-9.25zM2.75 12h18.5"/>
-    </symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M4 4l16 16M20 4 4 20"/>
-    </symbol>
-    <symbol id="icon-circledot" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="12" cy="12" r="3.2" fill="currentColor"/>
-    </symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
-    </symbol>
-  </svg>
-
-  <!-- PageLoader (000 -> 100) -->
-  <div id="page-loader" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-    <div class="loader-center">
-      <div class="loader-brand">
-        <svg class="icon"><use href="#icon-infynix"/></svg>
-        <span>INFYNIX<span style="color:var(--accent)">HUB</span></span>
-      </div>
-      <p class="loader-tagline">Ativação do Visor Estratégico & Engenharia de Vendas por IA.</p>
-    </div>
-    <div class="loader-progress-wrap">
-      <div class="loader-track">
-        <div class="loader-bar" id="loader-bar"></div>
-      </div>
-      <div class="loader-status">
-        <span>Carregando Sistema</span>
-        <span class="loader-counter" id="loader-counter">000</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
+  <!-- 1. Header Fixo -->
   <header id="site-header">
     <div class="shell header-inner">
-      <button class="brand-btn" id="header-brand-btn" aria-label="InfynixHub Home">
-        <svg class="icon"><use href="#icon-infynix"/></svg>
-        <span>INFYNIX<span style="color:var(--accent)">HUB</span></span>
-      </button>
+      <a href="#inicio" class="brand-logo" aria-label="InfynixHub Início">
+        <svg viewBox="0 0 70 70" fill="none">
+          <path d="M 28,35 C 12,17 4,27 4,35 C 4,43 14,53 28,35 C 42,17 52,17 66,35 C 76,48 66,57 52,35 Z" 
+                stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          <line x1="26" y1="21" x2="54" y2="49" stroke="#FFAA80" stroke-width="5" stroke-linecap="round" />
+          <circle cx="40" cy="35" r="5" fill="#FFFFFF" />
+        </svg>
+        <span>INFYNIX<span>HUB</span></span>
+      </a>
 
-      <nav class="primary-nav" aria-label="Navegação primária">
-        <button class="nav-btn" data-target="home" aria-current="page">Início</button>
-        <button class="nav-btn" data-target="works">Soluções</button>
-        <button class="nav-btn" data-target="services">Serviços</button>
-        <button class="nav-btn" data-target="about">O Funil</button>
-        <button class="nav-btn" data-action="contact">Diagnóstico</button>
+      <nav class="header-nav">
+        <a href="#solucoes">Soluções</a>
+        <a href="#nucleo">Tecnologia 3D</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#faq">Perguntas</a>
       </nav>
 
-      <div class="header-right">
-        <div class="clock-chip" id="clock-chip">
-          <span class="clock-label">Horário Local</span>
-          <span class="clock-time" id="clock-time">20:22</span>
-          <span class="clock-sep">•</span>
-          <span class="clock-date" id="clock-date">14 de Setembro, 2026</span>
-        </div>
-        <button class="menu-btn" id="open-menu-btn" aria-label="Abrir menu">
-          <span class="menu-btn-inner">
-            <svg class="icon"><use href="#icon-menu"/></svg>
-            <span class="menu-text">Menu</span>
-          </span>
-        </button>
-      </div>
+      <button class="btn-pill btn-orange open-diag-btn" style="padding: 0.65rem 1.4rem; font-size: 0.75rem;">
+        Agendar Diagnóstico
+      </button>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main">
-
-    <!-- Hero Section -->
-    <section id="home">
-      <!-- Interactive Smart Lens HUD Canvas -->
-      <div class="hero-canvas-wrap">
-        <canvas id="lens-canvas"></canvas>
-      </div>
-
-      <div class="hero-vignette"></div>
-
-      <div class="hero-watermark" id="hero-watermark">INFYNIX</div>
-
+  <main>
+    <!-- 2. HERO: FAIXA ESCURA COM ENERGIA LARANJA -->
+    <section class="hero-section" id="inicio">
       <div class="shell hero-grid">
-        <!-- Left Column -->
-        <div class="hero-left">
-          <div class="hero-eyebrow">
-            <span class="eyebrow orange">Engenharia de Crescimento 24/7</span>
-          </div>
-
-          <h1 class="hero-h1">
-            <span class="line-mask"><span class="line-reveal">Tráfego pago e</span></span>
-            <span class="line-mask"><span class="line-reveal"><span class="text-gradient">AI SDRs ativos</span></span></span>
-            <span class="line-mask"><span class="line-reveal">gerando reuniões.</span></span>
+        <div>
+          <div class="eyebrow eyebrow-dark">Engenharia de Crescimento &amp; AI SDR</div>
+          <h1 class="hero-title">
+            Tráfego pago qualificado. <br/>
+            Agentes que vendem no <span class="glow-orange">WhatsApp 24/7</span>.
           </h1>
+          <p class="hero-desc">
+            Integramos anúncios no Google e Meta a páginas ultra-rápidas e robôs autônomos que abordam, filtram e colocam reuniões prontas na agenda do seu time de vendas.
+          </p>
 
-          <div class="rating-row" id="hero-rating">
-            <span class="stars-span" aria-label="5 estrelas">
-              <svg class="icon"><use href="#icon-star"/></svg>
-              <svg class="icon"><use href="#icon-star"/></svg>
-              <svg class="icon"><use href="#icon-star"/></svg>
-              <svg class="icon"><use href="#icon-star"/></svg>
-              <svg class="icon"><use href="#icon-star"/></svg>
-            </span>
-            <span class="rating-text">+350.000 leads qualificados e agendados no WhatsApp</span>
-          </div>
-
-          <div class="cta-row" id="hero-cta">
-            <button class="pill-button accent has-arrow" data-action="contact">
-              <span class="pill-button-inner">
-                <span>Solicitar Diagnóstico</span>
-                <span class="pill-badge">
-                  <svg class="icon arrow-right"><use href="#icon-arrow-right"/></svg>
-                </span>
-              </span>
+          <div class="hero-actions">
+            <button class="btn-pill btn-orange open-diag-btn">
+              Solicitar Diagnóstico Comercial
             </button>
-            <button class="pill-button outline no-arrow" data-target="works">
-              <span class="pill-button-inner">
-                <span>Ver Ecossistema</span>
-              </span>
-            </button>
+            <a href="#nucleo" class="btn-pill btn-outline-white">
+              Ver Tecnologia em Ação &darr;
+            </a>
+          </div>
+
+          <div class="badge-bar">
+            <div class="stars">★★★★★</div>
+            <div>Mais de <strong>350.000 leads</strong> respondidos em menos de 8 segundos.</div>
           </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="hero-right">
-          <!-- Hero Interactive Simulator Card -->
-          <div class="hero-card" id="hero-card">
-            <div class="hero-card-clickable" id="hero-card-click">
-              <div class="hero-card-tile">
-                <svg class="icon"><use href="#icon-infynix"/></svg>
-              </div>
-              <div class="hero-card-panel">
-                <div class="hero-card-text-slot" id="hero-card-slot">
-                  <div class="hero-card-content" id="hero-card-content">
-                    <div class="hero-card-caption" id="card-caption">Agente de Conversão</div>
-                    <div class="hero-card-title" id="card-title">Qualifica decisores pelo WhatsApp e agenda a call direto no CRM.</div>
-                  </div>
-                </div>
-                <div class="hero-card-bottom">
-                  <div class="hero-dashes" id="hero-dashes">
-                    <span class="hero-dash active"></span>
-                    <span class="hero-dash"></span>
-                    <span class="hero-dash"></span>
-                  </div>
-                  <div class="hero-card-arrows">
-                    <button class="hero-arrow-btn prev" id="hero-prev" aria-label="Slide anterior">
-                      <svg class="icon"><use href="#icon-arrow-right"/></svg>
-                    </button>
-                    <button class="hero-arrow-btn next" id="hero-next" aria-label="Próximo slide">
-                      <svg class="icon"><use href="#icon-arrow-right"/></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Partners / Stack Integrations -->
-          <div class="partners-wrap" id="partners-wrap">
-            <div class="partners-label">Stack de Integração Homologada</div>
-            <div class="partners-grid">
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>Meta Ads</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>Google</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>WhatsApp</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>HubSpot</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>RD Station</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>Pipedrive</span>
-              <span class="partner-item"><svg class="icon"><use href="#icon-circledot"/></svg>n8n Core</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Status Bar -->
-      <div class="shell hero-status-bar" id="hero-status-bar">
-        <span>Infraestrutura Comercial Full-Funnel</span>
-        <span class="hero-status-center">Tempo médio de primeira resposta: &lt; 8 segundos</span>
-        <span>Mova o cursor para escanear a lente HUD ↓</span>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="shell about-grid">
-        <div class="about-left">
-          <svg class="icon about-globe-bg"><use href="#icon-globe"/></svg>
-          <div class="eyebrow orange">A Tese Infynix</div>
-          <div class="about-callout reveal-item">
-            <svg class="icon"><use href="#icon-globe"/></svg>
-            <span>Unimos atração cirúrgica com atendimento imediato e sem atrito.</span>
-          </div>
-        </div>
-
-        <div class="about-right">
-          <h2 class="about-h2" id="about-statement">
-            <!-- Words injected via JS -->
-          </h2>
-
-          <div class="about-footer-row reveal-item">
+        <!-- Card de Demonstração em Tempo Real -->
+        <div class="hero-preview-box">
+          <div class="preview-header">
             <div>
-              <div class="social-label">Presença Institucional</div>
-              <div class="social-chips">
-                <a href="#meta" class="social-chip" aria-label="Meta Ads">
-                  <svg class="icon"><use href="#icon-circledot"/></svg>
-                </a>
-                <a href="#google" class="social-chip" aria-label="Google Ads">
-                  <svg class="icon"><use href="#icon-circledot"/></svg>
-                </a>
-                <a href="#whatsapp" class="social-chip" aria-label="WhatsApp Cloud">
-                  <svg class="icon"><use href="#icon-circledot"/></svg>
-                </a>
-              </div>
+              <span class="status-dot"></span>
+              <strong style="font-size: 0.85rem; color: #FFF;">AI SDR INFYNIX ONLINE</strong>
             </div>
-            <button class="pill-button outline has-arrow" data-action="contact">
-              <span class="pill-button-inner">
-                <span>Agendar Sessão</span>
-                <span class="pill-badge">
-                  <svg class="icon arrow-right"><use href="#icon-arrow-right"/></svg>
-                </span>
-              </span>
-            </button>
+            <span style="font-size: 0.75rem; color: var(--orange); font-weight: 700;">WHATSAPP CLOUD API</span>
+          </div>
+
+          <div class="sim-chat">
+            <div class="sim-msg sim-lead">
+              Olá! Vi o anúncio de vocês no Google e preciso qualificar os contatos que chegam no meu comercial.
+            </div>
+            <div class="sim-msg sim-ai">
+              Perfeito! Qual é o faturamento médio atual da sua operação e quantas oportunidades chegam por dia?
+            </div>
+            <div class="sim-msg sim-lead">
+              Faturamos cerca de R$ 90 mil/mês e chegam 25 leads diários sem triagem rápida.
+            </div>
+            <div class="sim-msg sim-ai">
+              Entendido! Nossa esteira vai agendar os leads qualificados direto no seu Google Calendar. Posso reservar 15 min amanhã às 14h com nosso estrategista sênior?
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4-Pill Formula Band -->
-    <section class="create-band-section">
-      <ul class="shell create-band-list">
-        <li class="create-band-item">
-          <div class="create-band-tile light">Atrair</div>
-        </li>
-        <li class="create-band-item">
-          <div class="create-band-tile accent">Converter</div>
-        </li>
-        <li class="create-band-item">
-          <div class="create-band-tile dark">
-            <svg class="icon"><use href="#icon-arrow-right"/></svg>
-          </div>
-        </li>
-        <li class="create-band-item">
-          <div class="create-band-tile ghost">Escalar</div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Bento Grid Solutions -->
-    <section id="works">
-      <div class="shell portfolio-shell">
-        <div class="portfolio-header">
-          <div class="eyebrow-pill reveal-item">
-            <span class="eyebrow orange">Ecossistema Comercial</span>
-          </div>
-          <h2 class="portfolio-h2">
-            <span class="line-mask"><span class="line-reveal">Pilares de Escala</span></span>
+    <!-- 3. FAIXA CLARA: CONTRASTE EDITORIAL BRANCO -->
+    <section class="light-band" id="solucoes">
+      <div class="shell">
+        <div style="max-width: 44rem;">
+          <div class="eyebrow eyebrow-light">O Ecossistema Completo</div>
+          <h2 class="light-title" style="margin-top: 0.75rem;">
+            A engrenagem comercial que fecha a torneira de leads perdidos.
           </h2>
+          <p style="font-size: 1.1rem; color: var(--muted-light); margin-top: 1rem;">
+            O modelo comum queima verba em anúncios para jogar contatos em sites lentos onde a resposta demora 4 horas. Nós entregamos um funil integrado.
+          </p>
         </div>
 
-        <ul class="portfolio-grid">
+        <div class="cards-grid-3">
           <!-- Card 1 -->
-          <li class="portfolio-item">
-            <div class="portfolio-card">
-              <div class="portfolio-meta">
-                <span>Aquisição de Alta Intenção</span>
-                <span class="portfolio-badge">
-                  <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-                </span>
-              </div>
-              <div class="portfolio-watermark">
-                <svg class="icon"><use href="#icon-infynix"/></svg>
-              </div>
-              <div class="portfolio-bottom">
-                <h3 class="portfolio-title">Tráfego de Performance</h3>
-                <p class="portfolio-desc">Campanhas no Google Search focadas no decisor em momento de compra, combinadas com esteiras de autoridade e remarketing agressivo no Meta Ads.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-chip">Google Search</span>
-                  <span class="tag-chip">Meta Ads</span>
-                  <span class="tag-chip">CAPI Server-Side</span>
-                </div>
-              </div>
+          <div class="white-card">
+            <div>
+              <div class="card-idx">01</div>
+              <h3>Tráfego de Alta Intenção</h3>
+              <p>Campanhas no Google Search prontas para converter quem já procura pelo seu serviço e esteiras no Meta Ads para escala e autoridade.</p>
             </div>
-          </li>
+            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
+              Google Ads &bull; Meta Ads &bull; CAPI Server
+            </div>
+          </div>
 
           <!-- Card 2 -->
-          <li class="portfolio-item">
-            <div class="portfolio-card">
-              <div class="portfolio-meta">
-                <span>Atendimento & SDR 24/7</span>
-                <span class="portfolio-badge">
-                  <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-                </span>
-              </div>
-              <div class="portfolio-watermark">
-                <svg class="icon"><use href="#icon-infynix"/></svg>
-              </div>
-              <div class="portfolio-bottom">
-                <h3 class="portfolio-title">AI SDR no WhatsApp</h3>
-                <p class="portfolio-desc">Agente treinado com seu roteiro de vendas. Responde em menos de 8 segundos, filtra critérios BANT e agenda a reunião direto no calendário do closer.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-chip">WhatsApp Cloud API</span>
-                  <span class="tag-chip">Filtro BANT</span>
-                  <span class="tag-chip">Cal.com Sync</span>
-                </div>
-              </div>
+          <div class="white-card">
+            <div>
+              <div class="card-idx">02</div>
+              <h3>Páginas de Alta Conversão</h3>
+              <p>Desenvolvimento mobile-first, tempo de carregamento inferior a 1.2 segundos, design moderno e copywriting orientado à resposta imediata.</p>
             </div>
-          </li>
+            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
+              Carregamento &lt; 1.2s &bull; GTM &bull; GA4
+            </div>
+          </div>
 
           <!-- Card 3 -->
-          <li class="portfolio-item">
-            <div class="portfolio-card">
-              <div class="portfolio-meta">
-                <span>Desenvolvimento & Copywriting</span>
-                <span class="portfolio-badge">
-                  <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-                </span>
-              </div>
-              <div class="portfolio-watermark">
-                <svg class="icon"><use href="#icon-infynix"/></svg>
-              </div>
-              <div class="portfolio-bottom">
-                <h3 class="portfolio-title">Páginas de Alta Conversão</h3>
-                <p class="portfolio-desc">Landing pages e sites institucionais ultra-rápidos (< 1.2s), projetados com copywriting persuasivo e rastreamento completo de eventos de conversão.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-chip">Next.js / Tailwind</span>
-                  <span class="tag-chip">GTM & GA4</span>
-                  <span class="tag-chip">Mobile-First</span>
-                </div>
-              </div>
+          <div class="white-card">
+            <div>
+              <div class="card-idx">03</div>
+              <h3>AI SDR no WhatsApp</h3>
+              <p>Agente inteligente treinado nas regras do seu negócio. Faz triagem BANT (orçamento e perfil) e agenda a call no calendário do seu time.</p>
             </div>
-          </li>
-
-          <!-- Card 4 -->
-          <li class="portfolio-item">
-            <div class="portfolio-card">
-              <div class="portfolio-meta">
-                <span>Backend & Integrações</span>
-                <span class="portfolio-badge">
-                  <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-                </span>
-              </div>
-              <div class="portfolio-watermark">
-                <svg class="icon"><use href="#icon-infynix"/></svg>
-              </div>
-              <div class="portfolio-bottom">
-                <h3 class="portfolio-title">Automações & CRM Hub</h3>
-                <p class="portfolio-desc">Conexão total via n8n e webhooks para manter seu CRM sempre atualizado, alertar a equipe por WhatsApp/Slack e reativar contatos frios automaticamente.</p>
-                <div class="portfolio-tags">
-                  <span class="tag-chip">n8n / Make</span>
-                  <span class="tag-chip">HubSpot / RD</span>
-                  <span class="tag-chip">Reativação Ativa</span>
-                </div>
-              </div>
+            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
+              Atendimento &lt; 8s &bull; Cal.com &bull; CRM
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Services Rows -->
-    <section id="services">
-      <div class="shell services-shell">
-        <div class="services-eyebrow">
-          <span class="eyebrow orange">Entregáveis de Ponta a Ponta</span>
-        </div>
-        <h2 class="services-h2">
-          <span class="line-mask"><span class="line-reveal">O que implementamos</span></span>
+    <!-- 4. SEÇÃO DO OBJETO 3D INTERATIVO (NÚCLEO NEURAL INFYNIX) -->
+    <section class="interactive-stage-section" id="nucleo">
+      <div class="shell">
+        <div class="eyebrow eyebrow-dark">Tecnologia Tátil</div>
+        <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFF; margin-top: 0.5rem;">
+          O Núcleo Neural da Operação
         </h2>
+        <p style="color: var(--muted-dark); max-width: 36rem; margin: 0.75rem auto 0;">
+          Mova o cursor ou arraste com o dedo no celular para inclinar e interagir com o motor central de automação 3D.
+        </p>
 
-        <ul>
-          <li class="service-row-item">
-            <div class="service-link">
-              <span class="service-idx">01</span>
-              <h3 class="service-title">Gestão de Tráfego de Alta Intenção</h3>
-              <p class="service-desc">Foco no Custo por Reunião Agendada (CAC/ROAS), sem relatórios com métricas de vaidade.</p>
-              <span class="service-badge">
-                <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-              </span>
-            </div>
-          </li>
+        <!-- Canvas 3D Interativo -->
+        <div class="stage-canvas-wrap">
+          <canvas id="infynix-canvas-3d"></canvas>
+        </div>
 
-          <li class="service-row-item">
-            <div class="service-link">
-              <span class="service-idx">02</span>
-              <h3 class="service-title">Desenvolvimento Web de Alta Conversão</h3>
-              <p class="service-desc">Sites e landing pages ultrarrápidos desenhados para prender a atenção e conduzir ao clique.</p>
-              <span class="service-badge">
-                <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-              </span>
-            </div>
-          </li>
-
-          <li class="service-row-item">
-            <div class="service-link">
-              <span class="service-idx">03</span>
-              <h3 class="service-title">AI SDR para WhatsApp e Canais Digitais</h3>
-              <p class="service-desc">Respostas humanizadas em segundos, qualificação ativa de decisores e agendamento direto.</p>
-              <span class="service-badge">
-                <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-              </span>
-            </div>
-          </li>
-
-          <li class="service-row-item">
-            <div class="service-link">
-              <span class="service-idx">04</span>
-              <h3 class="service-title">Arquitetura de CRM & Esteiras de Dados</h3>
-              <p class="service-desc">Integração sem falhas entre plataformas de anúncios, WhatsApp e ferramentas de fechamento.</p>
-              <span class="service-badge">
-                <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-              </span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Stats Panel -->
-    <section class="stats-section">
-      <div class="shell stats-shell">
-        <div class="stats-panel" id="stats-panel">
-          <span class="eyebrow orange">Resultados em Produção</span>
-          <h2 class="stats-h2">
-            <span class="line-mask"><span class="line-reveal">Métricas da nossa infraestrutura.</span></span>
-          </h2>
-
-          <ul class="stats-grid">
-            <li class="stat-item" data-target="8" data-suffix="s">
-              <div class="stat-number-wrap">&lt;<span class="stat-val">0</span>s</div>
-              <div class="stat-label">Tempo médio de resposta inicial</div>
-            </li>
-            <li class="stat-item" data-target="320" data-suffix="%">
-              <div class="stat-number-wrap">+<span class="stat-val">0</span>%</div>
-              <div class="stat-label">Taxa de reuniões comparecidas</div>
-            </li>
-            <li class="stat-item" data-target="24" data-suffix="/7">
-              <div class="stat-number-wrap"><span class="stat-val">0</span>/7</div>
-              <div class="stat-label">Operação de qualificação autônoma</div>
-            </li>
-            <li class="stat-item" data-target="18" data-suffix="M">
-              <div class="stat-number-wrap">R$<span class="stat-val">0</span>M</div>
-              <div class="stat-label">Em pipeline gerado para parceiros</div>
-            </li>
-          </ul>
+        <div class="stage-badge-hint">
+          <span>&harr; Arraste ou incline para rotacionar o núcleo em tempo real</span>
         </div>
       </div>
     </section>
 
+    <!-- 5. FAIXA LARANJA MAGMA (CHAMADA DIRETA PARA AÇÃO) -->
+    <section class="orange-callout-band" id="vantagens">
+      <div class="shell orange-band-content">
+        <div>
+          <h2 class="orange-band-title">
+            Chega de esperar segunda-feira para <span>escalar suas vendas</span>.
+          </h2>
+          <p style="font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem; color: rgba(0,0,0,0.85);">
+            Estrutura implementada, validada e gerando reuniões comerciais em menos de 15 dias úteis.
+          </p>
+        </div>
+
+        <button class="btn-pill btn-dark open-diag-btn" style="padding: 1.2rem 2.2rem;">
+          Quero Essa Estrutura Agora &rarr;
+        </button>
+      </div>
+    </section>
+
+    <!-- 6. PERGUNTAS FREQUENTES & FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="shell">
+        <div style="text-align: center;">
+          <div class="eyebrow eyebrow-dark">Respostas Rápidas</div>
+          <h2 style="font-size: 2.5rem; font-weight: 900; color: #FFF; margin-top: 0.5rem;">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4>A Inteligência Artificial substitui meu vendedor humano?</h4>
+            <p>Não. Ela assume todo o trabalho repetitivo e cansativo de responder rápido, tirar dúvidas e filtrar quem não tem perfil de compra. O seu vendedor só entra na reunião com quem está pronto para fechar.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>Preciso mudar de número de WhatsApp?</h4>
+            <p>Não! Integramos a inteligência artificial diretamente à API Oficial da Meta (Cloud API), garantindo segurança total contra bloqueios e mantendo o histórico do seu negócio.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>Vocês cuidam dos anúncios também?</h4>
+            <p>Sim! Somos uma assessoria completa full-funnel: criamos as campanhas no Google e Meta Ads, desenhamos a landing page e programamos o AI SDR para fechar o ciclo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer id="site-footer">
-    <div class="shell footer-shell">
-      <div class="footer-cta-row">
-        <h2 class="footer-h2">
-          <span class="line-mask"><span class="line-reveal">Pronto para colocar</span></span>
-          <span class="line-mask"><span class="line-reveal">sua máquina de vendas</span></span>
-          <span class="line-mask"><span class="line-reveal">para rodar?</span></span>
-        </h2>
-        <button class="pill-button accent has-arrow" data-action="contact">
-          <span class="pill-button-inner">
-            <span>Iniciar Projeto</span>
-            <span class="pill-badge">
-              <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-            </span>
-          </span>
-        </button>
-      </div>
-
-      <div class="footer-cols">
-        <div>
-          <div class="footer-brand-title">
-            <svg class="icon"><use href="#icon-infynix"/></svg>
-            <span>INFYNIX<span style="color:var(--accent)">HUB</span></span>
-          </div>
-          <p class="footer-tagline">Assessoria de crescimento e engenharia de vendas. Transformamos tráfego pago em reuniões diárias com decisores.</p>
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="shell" style="display: flex; flex-direction: column; gap: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div class="brand-logo">
+          <span>INFYNIX<span>HUB</span></span>
         </div>
-
-        <div>
-          <div class="footer-col-title">Soluções</div>
-          <ul class="footer-links-list">
-            <li><a href="#works" class="animated-link" data-target="works"><span>Tráfego Pago</span></a></li>
-            <li><a href="#works" class="animated-link" data-target="works"><span>AI SDR Conversacional</span></a></li>
-            <li><a href="#works" class="animated-link" data-target="works"><span>Landing Pages Rápidas</span></a></li>
-            <li><a href="#works" class="animated-link" data-target="works"><span>Automação de CRM</span></a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Ecossistema</div>
-          <ul class="footer-links-list">
-            <li><a href="#about" class="animated-link" data-target="about"><span>Metodologia</span></a></li>
-            <li><a href="#services" class="animated-link" data-target="services"><span>Serviços</span></a></li>
-            <li><a href="#contact" class="animated-link" data-action="contact"><span>Diagnóstico Gratuito</span></a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Canais</div>
-          <ul class="footer-links-list">
-            <li><a href="#whatsapp" class="animated-link" data-action="contact"><span>WhatsApp Oficial</span></a></li>
-            <li><a href="#linkedin" class="animated-link"><span>LinkedIn Institucional</span></a></li>
-          </ul>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem;">
+          <a href="#solucoes" style="color: var(--muted-dark); text-decoration: none;">Soluções</a>
+          <a href="#nucleo" style="color: var(--muted-dark); text-decoration: none;">Tecnologia</a>
+          <a href="#faq" style="color: var(--muted-dark); text-decoration: none;">FAQ</a>
         </div>
       </div>
-
-      <div class="footer-legal-bar">
-        <span>© 2026 INFYNIXHUB. Todos os direitos reservados.</span>
-        <div class="legal-links">
-          <a href="#privacidade" class="animated-link"><span>Privacidade</span></a>
-          <a href="#termos" class="animated-link"><span>Termos de Serviço</span></a>
-        </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>&copy; 2026 INFYNIXHUB. Engenharia de Vendas &amp; Crescimento.</div>
+        <div style="color: var(--orange); font-weight: 700;">Guarulhos &bull; São Paulo</div>
       </div>
     </div>
-
-    <div class="footer-watermark">INFYNIX</div>
   </footer>
 
-  <!-- NavMenu Overlay -->
-  <div id="nav-menu" role="dialog" aria-modal="true" aria-label="Menu principal">
-    <div class="shell nav-menu-top">
-      <div class="nav-menu-brand">
-        <svg class="icon"><use href="#icon-infynix"/></svg>
-        <span>INFYNIX<span style="color:var(--accent)">HUB</span></span>
-      </div>
-      <button class="nav-menu-close" id="close-menu-btn" aria-label="Fechar menu">
-        <svg class="icon"><use href="#icon-close"/></svg>
-        <span>Fechar</span>
-      </button>
-    </div>
+  <!-- Modal de Diagnóstico Comercial -->
+  <div id="diag-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="close-modal-btn">&times;</button>
+      <div class="eyebrow eyebrow-dark">Diagnóstico Comercial</div>
+      <h3 style="font-size: 1.6rem; font-weight: 900; color: #FFF; margin-top: 0.5rem;">Agende sua Sessão</h3>
+      <p style="font-size: 0.85rem; color: var(--muted-dark); margin-top: 0.25rem;">Receba a análise da sua esteira de vendas e tráfego.</p>
 
-    <div class="shell nav-menu-center">
-      <ul class="nav-menu-list">
-        <li>
-          <button class="nav-menu-item-btn" data-target="home">
-            <span class="nav-menu-idx">01</span>
-            <span class="nav-menu-label">Início</span>
-          </button>
-        </li>
-        <li>
-          <button class="nav-menu-item-btn" data-target="works">
-            <span class="nav-menu-idx">02</span>
-            <span class="nav-menu-label">Soluções</span>
-          </button>
-        </li>
-        <li>
-          <button class="nav-menu-item-btn" data-target="services">
-            <span class="nav-menu-idx">03</span>
-            <span class="nav-menu-label">Serviços</span>
-          </button>
-        </li>
-        <li>
-          <button class="nav-menu-item-btn" data-target="about">
-            <span class="nav-menu-idx">04</span>
-            <span class="nav-menu-label">O Funil</span>
-          </button>
-        </li>
-        <li>
-          <button class="nav-menu-item-btn" data-action="contact">
-            <span class="nav-menu-idx">05</span>
-            <span class="nav-menu-label">Diagnóstico</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="shell nav-menu-bottom">
-      <span id="nav-menu-clock">Horário Local — 20:22</span>
-      <button class="nav-menu-bottom-btn" data-action="contact">Solicitar Diagnóstico Comercial →</button>
-    </div>
-  </div>
-
-  <!-- Request Diagnostic Modal -->
-  <div id="request-modal" role="dialog" aria-modal="true" aria-label="Solicitar Diagnóstico">
-    <div class="modal-panel" id="modal-panel">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar modal">
-        <svg class="icon"><use href="#icon-close"/></svg>
-      </button>
-
-      <!-- Form View -->
-      <div id="modal-form-view">
-        <div class="modal-header">
-          <div class="modal-tag">Diagnóstico de Engenharia de Vendas</div>
-          <h2 class="modal-h2">Escale sua operação comercial.</h2>
-        </div>
-
-        <form class="modal-form" id="project-form">
-          <label class="form-field">
-            <span class="field-label">Seu Nome</span>
-            <input type="text" required class="field-input" placeholder="Ex: Lucas Pereira" />
-          </label>
-
-          <label class="form-field">
-            <span class="field-label">WhatsApp Corporativo</span>
-            <input type="tel" required class="field-input" placeholder="(11) 99999-9999" />
-          </label>
-
-          <label class="form-field">
-            <span class="field-label">Faturamento Médio Mensal</span>
-            <select class="field-select" required>
-              <option value="ate30k">Até R$ 30.000 / mês</option>
-              <option value="30a100k">R$ 30.000 a R$ 100.000 / mês</option>
-              <option value="100a300k">R$ 100.000 a R$ 300.000 / mês</option>
-              <option value="acima300k">Acima de R$ 300.000 / mês</option>
-            </select>
-          </label>
-
-          <label class="form-field">
-            <span class="field-label">Qual o seu maior gargalo hoje?</span>
-            <textarea rows="3" required class="field-textarea" placeholder="Ex: Os leads do tráfego demoram para responder e esfriam antes da reunião."></textarea>
-          </label>
-
-          <div class="form-bottom-row">
-            <span class="form-note">Resposta em menos de 10 minutos.</span>
-            <button type="submit" class="pill-button accent has-arrow" id="form-submit-btn">
-              <span class="pill-button-inner">
-                <span id="submit-btn-text">Enviar Dados</span>
-                <span class="pill-badge">
-                  <svg class="icon arrow-up-right"><use href="#icon-arrow-up-right"/></svg>
-                </span>
-              </span>
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Success View -->
-      <div id="modal-success-view" class="modal-success" style="display:none;">
-        <div class="success-badge">
-          <svg class="icon"><use href="#icon-infynix"/></svg>
-        </div>
-        <h2 class="modal-h2">Dados recebidos com sucesso</h2>
-        <p class="success-desc">Nosso AI SDR iniciará o contato pelo WhatsApp fornecido em instantes.</p>
-        <button class="pill-button outline no-arrow" id="success-close-btn">
-          <span class="pill-button-inner">
-            <span>Concluir</span>
-          </span>
+      <form class="modal-form" onsubmit="event.preventDefault(); alert('Solicitação recebida! Nosso especialista entrará em contato via WhatsApp.'); document.getElementById('diag-modal').classList.remove('active');">
+        <input type="text" required placeholder="Seu Nome Completo" class="form-input" />
+        <input type="tel" required placeholder="WhatsApp Corporativo (com DDD)" class="form-input" />
+        <select class="form-input" style="background-color: #060709;">
+          <option>Faturamento: Até R$ 50 mil / mês</option>
+          <option>Faturamento: R$ 50 mil a R$ 150 mil / mês</option>
+          <option>Faturamento: Acima de R$ 150 mil / mês</option>
+        </select>
+        <button type="submit" class="btn-pill btn-orange" style="margin-top: 0.5rem; width: 100%;">
+          Enviar Dados para Análise
         </button>
-      </div>
+      </form>
     </div>
   </div>
 
-  <!-- JavaScript Module -->
-  <script type="module">
-    import Lenis from 'lenis';
-
-    // 1. Lenis Smooth Scroll Setup
-    window.scrollTo(0, 0);
-    const lenis = new Lenis({ smoothWheel: true });
-    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-
-    let scrollLocked = false;
-    function stopScroll() {
-      if (scrollLocked) return;
-      scrollLocked = true;
-      lenis.stop();
-      document.documentElement.style.position = 'relative';
-      document.documentElement.style.overflow = 'hidden';
-      document.documentElement.style.height = '100%';
-    }
-    function startScroll() {
-      if (!scrollLocked) return;
-      scrollLocked = false;
-      lenis.start();
-      document.documentElement.style.removeProperty('position');
-      document.documentElement.style.removeProperty('overflow');
-      document.documentElement.style.removeProperty('height');
-    }
-
-    window.scrollToSection = function(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      setTimeout(() => {
-        const top = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }, 50);
-    };
-
-    // 2. Adaptive Grid Scale-Up (>1920px)
-    function applyAdaptiveGrid() {
-      const FONT_BASE = 16, baseWidth = 1920, coef = 0.6666;
-      const w = window.innerWidth;
-      const widthReduction = ((baseWidth - w) / baseWidth) * 100;
-      const size = FONT_BASE - (FONT_BASE * (widthReduction * coef)) / 100;
-      if (size > FONT_BASE) {
-        document.documentElement.style.fontSize = size + 'px';
-      } else {
-        document.documentElement.style.removeProperty('font-size');
-      }
-    }
-    applyAdaptiveGrid();
-    window.addEventListener('resize', applyAdaptiveGrid);
-
-    // 3. Live Clock (BRT)
-    const clockTimeEl = document.getElementById('clock-time');
-    const clockDateEl = document.getElementById('clock-date');
-    const navClockEl = document.getElementById('nav-menu-clock');
-    const meses = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const mins = String(now.getMinutes()).padStart(2, '0');
-      const timeStr = `${hours}:${mins}`;
-
-      const dia = now.getDate();
-      const mes = meses[now.getMonth()];
-      const ano = now.getFullYear();
-      const dateStr = `${dia} de ${mes}, ${ano}`;
-
-      if (clockTimeEl) clockTimeEl.textContent = timeStr;
-      if (clockDateEl) clockDateEl.textContent = dateStr;
-      if (navClockEl) navClockEl.textContent = `Horário Local — ${timeStr}`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-
-    // 4. Word Reveal Preparation for About section
-    const statementEl = document.getElementById('about-statement');
-    const textPart1 = "A maioria das empresas queima verba em anúncios para enviar tráfego a páginas lentas ou ";
-    const textPart2 = "esperar horas por uma resposta manual. A InfynixHub conecta atração de alta intenção a SDRs autônomos que convertem e agendam em segundos.";
-
-    function createWordSpans(str, className = "") {
-      return str.split(" ").map(w => {
-        if (!w) return "";
-        return `<span class="word-wrap ${className}">${w} </span>`;
-      }).join("");
-    }
-    statementEl.innerHTML = createWordSpans(textPart1) + createWordSpans(textPart2, "about-muted");
-
-    // 5. PageLoader Sequence (000 -> 100)
-    stopScroll();
-    const loader = document.getElementById('page-loader');
-    const loaderBar = document.getElementById('loader-bar');
-    const loaderCounter = document.getElementById('loader-counter');
-    const loaderCenter = document.querySelector('.loader-center');
-    const FILL_MS = 1300;
-    const startTime = performance.now();
-
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function animateLoader(now) {
-      const elapsed = now - startTime;
-      const t = Math.min(elapsed / FILL_MS, 1);
-      const progress = Math.round(easeInOutCubic(t) * 100);
-
-      loaderBar.style.width = progress + '%';
-      loaderCounter.textContent = String(progress).padStart(3, '0');
-      loader.setAttribute('aria-valuenow', progress);
-
-      if (t < 1) {
-        requestAnimationFrame(animateLoader);
-      } else {
-        setTimeout(() => {
-          loaderCenter.style.opacity = '0';
-          loaderCenter.style.transform = 'translateY(-12px)';
-          loader.style.transform = 'translateY(-100%)';
-
-          setTimeout(() => {
-            startScroll();
-            loader.remove();
-            triggerHeroReveals();
-          }, 700);
-        }, 120);
-      }
-    }
-    requestAnimationFrame(animateLoader);
-
-    // 6. Entrance & Reveal Triggers
-    function triggerHeroReveals() {
-      setTimeout(() => {
-        const header = document.getElementById('site-header');
-        if (header) {
-          header.style.opacity = '1';
-          header.style.transform = 'translateY(0)';
-        }
-      }, 150);
-
-      setTimeout(() => {
-        const el = document.querySelector('.hero-eyebrow');
-        if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-      }, 200);
-
-      setTimeout(() => {
-        const lines = document.querySelectorAll('.hero-h1 .line-reveal');
-        lines.forEach((l, idx) => {
-          setTimeout(() => {
-            l.style.opacity = '1';
-            l.style.transform = 'translateY(0)';
-          }, idx * 120);
-        });
-      }, 250);
-
-      setTimeout(() => {
-        const wm = document.getElementById('hero-watermark');
-        if (wm) { wm.style.opacity = '0.03'; wm.style.transform = 'translateY(0)'; }
-      }, 300);
-
-      setTimeout(() => {
-        const card = document.getElementById('hero-card');
-        if (card) { card.style.opacity = '1'; card.style.transform = 'translateY(0) scale(1)'; }
-      }, 400);
-
-      setTimeout(() => {
-        const p = document.getElementById('partners-wrap');
-        if (p) { p.style.opacity = '1'; p.style.transform = 'translateY(0)'; }
-      }, 550);
-
-      setTimeout(() => {
-        const r = document.getElementById('hero-rating');
-        if (r) { r.style.opacity = '1'; r.style.transform = 'translateY(0)'; }
-      }, 650);
-
-      setTimeout(() => {
-        const c = document.getElementById('hero-cta');
-        if (c) { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }
-      }, 750);
-
-      setTimeout(() => {
-        const sb = document.getElementById('hero-status-bar');
-        if (sb) { sb.style.opacity = '1'; }
-      }, 900);
-    }
-
-    // Scroll Observers
-    const observerOptions = { threshold: 0.15 };
-    const revealObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const target = entry.target;
-
-        if (target.id === 'about-statement') {
-          const words = target.querySelectorAll('.word-wrap');
-          words.forEach((w, i) => {
-            setTimeout(() => {
-              w.style.opacity = '1';
-              w.style.transform = 'translateY(0)';
-            }, i * 30);
-          });
-          obs.unobserve(target);
-          return;
-        }
-
-        const lines = target.querySelectorAll('.line-reveal');
-        if (lines.length > 0) {
-          lines.forEach((l, i) => {
-            setTimeout(() => {
-              l.style.opacity = '1';
-              l.style.transform = 'translateY(0)';
-            }, i * 100);
-          });
-        }
-
-        if (target.classList.contains('reveal-item')) {
-          target.style.opacity = '1';
-          target.style.transform = 'translateY(0)';
-        }
-
-        if (target.classList.contains('create-band-list')) {
-          const items = target.querySelectorAll('.create-band-item');
-          items.forEach((item, i) => {
-            setTimeout(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            }, i * 120);
-          });
-        }
-
-        if (target.classList.contains('portfolio-grid')) {
-          const cards = target.querySelectorAll('.portfolio-item');
-          cards.forEach((card, i) => {
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, i * 90);
-          });
-        }
-
-        if (target.tagName === 'UL' && target.closest('#services')) {
-          const rows = target.querySelectorAll('.service-row-item');
-          rows.forEach((row, i) => {
-            setTimeout(() => {
-              row.style.opacity = '1';
-              row.style.transform = 'translateY(0)';
-            }, i * 80);
-          });
-        }
-
-        if (target.id === 'stats-panel') {
-          target.style.opacity = '1';
-          target.style.transform = 'translateY(0) scale(1)';
-          const items = target.querySelectorAll('.stat-item');
-          items.forEach((item, i) => {
-            setTimeout(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            }, i * 90);
-          });
-        }
-
-        obs.unobserve(target);
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('#about-statement, .create-band-list, .portfolio-grid, #services ul, #stats-panel, .portfolio-header, .services-eyebrow, #site-footer .footer-cta-row, .about-callout, .about-footer-row, .eyebrow-pill').forEach(el => {
-      revealObserver.observe(el);
+  <!-- SCRIPT: INTERATIVIDADE 3D TÁTIL (Efeito Lata Soda / Núcleo Infynix) -->
+  <script>
+    // Controle do Modal
+    const modal = document.getElementById('diag-modal');
+    document.querySelectorAll('.open-diag-btn').forEach(btn => {
+      btn.addEventListener('click', () => modal.classList.add('active'));
     });
-
-    // 7. Stats Scroll Count-Up Trigger
-    const statItems = document.querySelectorAll('.stat-item');
-    let statsDone = false;
-
-    function handleStatsProgress() {
-      if (statsDone || statItems.length === 0) return;
-      const panel = document.getElementById('stats-panel');
-      if (!panel) return;
-
-      const rect = panel.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh;
-      const end = vh / 2;
-      const current = rect.top + rect.height / 2;
-
-      let progress = (start - current) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
-
-      statItems.forEach(item => {
-        const targetVal = parseInt(item.getAttribute('data-target'), 10);
-        const span = item.querySelector('.stat-val');
-        if (span) {
-          span.textContent = Math.round(progress * targetVal);
-        }
-      });
-
-      if (progress >= 1) {
-        statsDone = true;
-      }
-    }
-    window.addEventListener('scroll', handleStatsProgress, { passive: true });
-
-    // 8. Carousel Logic
-    const carouselItems = [
-      { caption: "Qualificação BANT", title: "Descobre faturamento e urgência em linguagem natural." },
-      { caption: "Agendamento Direto", title: "Insere o lead qualificado diretamente no Google Calendar do closer." },
-      { caption: "Reativação Inteligente", title: "Resgata orçamentos antigos parados na base sem custo extra." }
-    ];
-    let activeCarouselIndex = 0;
-    const cardContent = document.getElementById('hero-card-content');
-    const cardCaption = document.getElementById('card-caption');
-    const cardTitle = document.getElementById('card-title');
-    const dashes = document.querySelectorAll('.hero-dash');
-
-    function updateCarousel(nextIndex, direction = 1) {
-      if (nextIndex === activeCarouselIndex) return;
-      activeCarouselIndex = (nextIndex + carouselItems.length) % carouselItems.length;
-
-      cardContent.style.transform = `translateY(${direction > 0 ? '-14px' : '14px'})`;
-      cardContent.style.opacity = '0';
-
-      setTimeout(() => {
-        const item = carouselItems[activeCarouselIndex];
-        cardCaption.textContent = item.caption;
-        cardTitle.textContent = item.title;
-        dashes.forEach((d, i) => d.classList.toggle('active', i === activeCarouselIndex));
-
-        cardContent.style.transform = `translateY(${direction > 0 ? '14px' : '-14px'})`;
-        cardContent.offsetHeight;
-
-        cardContent.style.transform = 'translateY(0)';
-        cardContent.style.opacity = '1';
-      }, 180);
-    }
-
-    document.getElementById('hero-card-click').addEventListener('click', (e) => {
-      if (e.target.closest('.hero-arrow-btn')) return;
-      updateCarousel(activeCarouselIndex + 1, 1);
+    document.getElementById('close-modal-btn').addEventListener('click', () => {
+      modal.classList.remove('active');
     });
-    document.getElementById('hero-next').addEventListener('click', (e) => {
-      e.stopPropagation();
-      updateCarousel(activeCarouselIndex + 1, 1);
-    });
-    document.getElementById('hero-prev').addEventListener('click', (e) => {
-      e.stopPropagation();
-      updateCarousel(activeCarouselIndex - 1, -1);
-    });
-
-    // 9. Interactive Smart Lens HUD Canvas (Óculos Inteligente de Marketing)
-    const canvas = document.getElementById('lens-canvas');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let w, h;
-      let mouse = { x: -1000, y: -1000, active: false };
-      let lensAngle = 0;
-      
-      const nodes = [];
-      const nodeCount = 50;
-      const metrics = ["ROAS: 4.8x", "CAC: R$ 14,20", "LEAD: QUALIFICADO", "CTR: 3.4%", "CONV: 18.2%"];
-
-      function resizeCanvas() {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = document.getElementById('home').offsetHeight || window.innerHeight;
-      }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
-      window.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX;
-        mouse.y = e.clientY - rect.top;
-        mouse.active = true;
-      });
-
-      window.addEventListener('mouseleave', () => {
-        mouse.active = false;
-      });
-
-      // Inicializar pontos de dados de marketing
-      for (let i = 0; i < nodeCount; i++) {
-        nodes.push({
-          x: Math.random() * (window.innerWidth || 1200),
-          y: Math.random() * (window.innerHeight || 800),
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          label: metrics[Math.floor(Math.random() * metrics.length)]
-        });
-      }
-
-      function drawLensHUD() {
-        ctx.clearRect(0, 0, w, h);
-
-        // Grade tática milimétrica de fundo
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
-        ctx.lineWidth = 1;
-        const gridSize = 80;
-        for (let x = 0; x < w; x += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, h);
-          ctx.stroke();
-        }
-        for (let y = 0; y < h; y += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(w, y);
-          ctx.stroke();
-        }
-
-        // Animação dos nós de conversão
-        for (let i = 0; i < nodes.length; i++) {
-          const n = nodes[i];
-          n.x += n.vx;
-          n.y += n.vy;
-
-          if (n.x < 0 || n.x > w) n.vx *= -1;
-          if (n.y < 0 || n.y > h) n.vy *= -1;
-
-          // Desenho do nó normal
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-          ctx.fill();
-
-          // Conexões fracas
-          for (let j = i + 1; j < nodes.length; j++) {
-            const n2 = nodes[j];
-            const dist = Math.hypot(n.x - n2.x, n.y - n2.y);
-            if (dist < 110) {
-              ctx.beginPath();
-              ctx.moveTo(n.x, n.y);
-              ctx.lineTo(n2.x, n2.y);
-              ctx.strokeStyle = `rgba(255, 255, 255, ${0.04 * (1 - dist / 110)})`;
-              ctx.stroke();
-            }
-          }
-        }
-
-        // Efeito da Lente do Óculos Inteligente (HUD Scanner) sobre o cursor
-        if (mouse.active) {
-          const radius = 110;
-          lensAngle += 0.015;
-
-          // 1. Círculo Externo com abertura em arco
-          ctx.beginPath();
-          ctx.arc(mouse.x, mouse.y, radius, lensAngle, lensAngle + Math.PI * 1.5);
-          ctx.strokeStyle = '#ff5500';
-          ctx.lineWidth = 1.8;
-          ctx.stroke();
-
-          // 2. Anel Interno tracejado
-          ctx.beginPath();
-          ctx.arc(mouse.x, mouse.y, radius - 15, 0, Math.PI * 2);
-          ctx.setLineDash([4, 6]);
-          ctx.strokeStyle = 'rgba(255, 85, 0, 0.4)';
-          ctx.stroke();
-          ctx.setLineDash([]);
-
-          // 3. Retícula tática central (Crosshair)
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(mouse.x - 12, mouse.y);
-          ctx.lineTo(mouse.x + 12, mouse.y);
-          ctx.moveTo(mouse.x, mouse.y - 12);
-          ctx.lineTo(mouse.x, mouse.y + 12);
-          ctx.stroke();
-
-          // Ponto focal central em laranja
-          ctx.beginPath();
-          ctx.arc(mouse.x, mouse.y, 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#ff5500';
-          ctx.fill();
-
-          // 4. Exibição de Telemetria de Marketing dentro da lente
-          ctx.font = '600 10px "Plus Jakarta Sans", sans-serif';
-          ctx.fillStyle = '#ff7733';
-          ctx.fillText(`LENS HUD // ${Math.floor(mouse.x)}:${Math.floor(mouse.y)}`, mouse.x + 35, mouse.y - radius + 15);
-
-          // Realce e ativação de nós capturados sob a lente
-          for (let i = 0; i < nodes.length; i++) {
-            const n = nodes[i];
-            const dist = Math.hypot(n.x - mouse.x, n.y - mouse.y);
-            if (dist < radius) {
-              // Brilho laranja sob a lente
-              ctx.beginPath();
-              ctx.arc(n.x, n.y, 4, 0, Math.PI * 2);
-              ctx.fillStyle = '#ff5500';
-              ctx.shadowColor = '#ff5500';
-              ctx.shadowBlur = 8;
-              ctx.fill();
-              ctx.shadowBlur = 0;
-
-              // Linha laser da retícula ao dado identificado
-              ctx.beginPath();
-              ctx.moveTo(mouse.x, mouse.y);
-              ctx.lineTo(n.x, n.y);
-              ctx.strokeStyle = 'rgba(255, 85, 0, 0.3)';
-              ctx.stroke();
-
-              // Tag de Marketing decodificada
-              ctx.font = '700 9px "Plus Jakarta Sans", sans-serif';
-              ctx.fillStyle = '#ffffff';
-              ctx.fillText(n.label, n.x + 8, n.y + 3);
-            }
-          }
-        }
-
-        requestAnimationFrame(drawLensHUD);
-      }
-      drawLensHUD();
-    }
-
-    // 10. NavMenu Interactions
-    const navMenu = document.getElementById('nav-menu');
-    const openMenuBtn = document.getElementById('open-menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-    const navMenuItems = document.querySelectorAll('.nav-menu-item-btn');
-
-    function openNavMenu() {
-      stopScroll();
-      navMenu.classList.add('open');
-      navMenuItems.forEach((btn, i) => {
-        btn.style.transitionDelay = `${i * 45 + 80}ms`;
-      });
-    }
-
-    function closeNavMenu() {
-      navMenu.classList.remove('open');
-      navMenuItems.forEach((btn) => {
-        btn.style.transitionDelay = '0ms';
-      });
-      startScroll();
-    }
-
-    openMenuBtn.addEventListener('click', openNavMenu);
-    closeMenuBtn.addEventListener('click', closeNavMenu);
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (navMenu.classList.contains('open')) closeNavMenu();
-        if (modal.classList.contains('open')) closeModal();
-      }
-    });
-
-    // 11. Request Diagnostic Modal
-    const modal = document.getElementById('request-modal');
-    const modalPanel = document.getElementById('modal-panel');
-    const modalCloseBtn = document.getElementById('modal-close-btn');
-    const successCloseBtn = document.getElementById('success-close-btn');
-    const projectForm = document.getElementById('project-form');
-    const formView = document.getElementById('modal-form-view');
-    const successView = document.getElementById('modal-success-view');
-    const submitBtnText = document.getElementById('submit-btn-text');
-
-    function openModal() {
-      if (navMenu.classList.contains('open')) closeNavMenu();
-      stopScroll();
-      modal.classList.add('open');
-    }
-
-    function closeModal() {
-      modal.classList.remove('open');
-      startScroll();
-      setTimeout(() => {
-        formView.style.display = 'block';
-        successView.style.display = 'none';
-        projectForm.reset();
-        submitBtnText.textContent = 'Enviar Dados';
-      }, 300);
-    }
-
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    modalPanel.addEventListener('click', (e) => e.stopPropagation());
-    modalCloseBtn.addEventListener('click', closeModal);
-    successCloseBtn.addEventListener('click', closeModal);
-
-    projectForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      submitBtnText.textContent = 'Decodificando IA…';
-      setTimeout(() => {
-        formView.style.display = 'none';
-        successView.style.display = 'flex';
-      }, 650);
+      if (e.target === modal) modal.classList.remove('active');
     });
 
-    // 12. Global Routing & Link Handlers
-    document.addEventListener('click', (e) => {
-      const contactBtn = e.target.closest('[data-action="contact"]');
-      if (contactBtn) {
-        e.preventDefault();
-        openModal();
-        return;
-      }
+    // MOTOR 3D CANVAS (Núcleo Neural Rotativo com Física de Cursor)
+    const canvas = document.getElementById('infynix-canvas-3d');
+    const ctx = canvas.getContext('2d');
+    let width, height;
 
-      const targetBtn = e.target.closest('[data-target]');
-      if (targetBtn) {
-        e.preventDefault();
-        const id = targetBtn.getAttribute('data-target');
-        if (navMenu.classList.contains('open')) closeNavMenu();
-        window.scrollToSection(id);
-        return;
-      }
+    let targetRotX = 0;
+    let targetRotY = 0;
+    let currentRotX = 0;
+    let currentRotY = 0;
+    let isDragging = false;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
 
-      const brandBtn = e.target.closest('#header-brand-btn');
-      if (brandBtn) {
-        e.preventDefault();
-        window.scrollToSection('home');
+    function resize3D() {
+      const rect = canvas.getBoundingClientRect();
+      width = canvas.width = rect.width;
+      height = canvas.height = rect.height;
+    }
+    window.addEventListener('resize', resize3D);
+    resize3D();
+
+    // Rastreamento de Mouse / Touch
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) {
+        const rect = canvas.getBoundingClientRect();
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+          const normX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          const normY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          targetRotY = normX * 0.9;
+          targetRotX = -normY * 0.7;
+        }
       }
     });
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+    });
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const dx = e.clientX - lastMouseX;
+        const dy = e.clientY - lastMouseY;
+        targetRotY += dx * 0.015;
+        targetRotX -= dy * 0.015;
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      }
+    });
+
+    // Touch mobile
+    canvas.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
+    }, { passive: true });
+    window.addEventListener('touchend', () => isDragging = false);
+    window.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length > 0) {
+        const dx = e.touches[0].clientX - lastMouseX;
+        const dy = e.touches[0].clientY - lastMouseY;
+        targetRotY += dx * 0.02;
+        targetRotX -= dy * 0.02;
+        lastMouseX = e.touches[0].clientX;
+        lastMouseY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    // Pontos do Objeto Geométrico (Cilindro / Núcleo Neural 3D)
+    const points = [];
+    const layers = 6;
+    const pointsPerLayer = 16;
+    const radius = 100;
+    const heightSpan = 140;
+
+    for (let l = 0; l < layers; l++) {
+      const y = (l / (layers - 1) - 0.5) * heightSpan;
+      for (let p = 0; p < pointsPerLayer; p++) {
+        const theta = (p / pointsPerLayer) * Math.PI * 2;
+        points.push({
+          x: Math.cos(theta) * radius,
+          y: y,
+          z: Math.sin(theta) * radius,
+          origX: Math.cos(theta) * radius,
+          origZ: Math.sin(theta) * radius
+        });
+      }
+    }
+
+    let globalPulse = 0;
+
+    function render3D() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Interpolação suave do ângulo (Lerp estilo Soda)
+      currentRotX += (targetRotX - currentRotX) * 0.06;
+      currentRotY += (targetRotY - currentRotY) * 0.06;
+
+      // Auto rotação contínua sutil
+      targetRotY += 0.006;
+      globalPulse += 0.035;
+
+      const cosX = Math.cos(currentRotX);
+      const sinX = Math.sin(currentRotX);
+      const cosY = Math.cos(currentRotY);
+      const sinY = Math.sin(currentRotY);
+
+      const cx = width / 2;
+      const cy = height / 2;
+      const fov = 320;
+
+      const projected = [];
+
+      // Projeção 3D -> 2D
+      for (let i = 0; i < points.length; i++) {
+        const pt = points[i];
+
+        // Rotação Y
+        let x1 = pt.x * cosY - pt.z * sinY;
+        let z1 = pt.z * cosY + pt.x * sinY;
+
+        // Rotação X
+        let y2 = pt.y * cosX - z1 * sinX;
+        let z2 = z1 * cosX + pt.y * sinX;
+
+        // Efeito de pulso de dados no núcleo
+        const wave = Math.sin(globalPulse + pt.y * 0.05) * 6;
+        z2 += wave;
+
+        const distance = fov / (fov + z2 + 200);
+        projected.push({
+          x: cx + x1 * distance,
+          y: cy + y2 * distance,
+          scale: distance,
+          z: z2
+        });
+      }
+
+      // 1. Desenhar conexões neurais / malha cilíndrica
+      ctx.lineWidth = 1.2;
+      for (let l = 0; l < layers; l++) {
+        const start = l * pointsPerLayer;
+        for (let p = 0; p < pointsPerLayer; p++) {
+          const curr = start + p;
+          const next = start + ((p + 1) % pointsPerLayer);
+
+          // Linha do anel
+          const alphaRing = (projected[curr].scale - 0.5) * 1.5;
+          ctx.beginPath();
+          ctx.moveTo(projected[curr].x, projected[curr].y);
+          ctx.lineTo(projected[next].x, projected[next].y);
+          ctx.strokeStyle = `rgba(255, 85, 0, ${Math.max(0.08, alphaRing * 0.6)})`;
+          ctx.stroke();
+
+          // Linha vertical conectando camadas
+          if (l < layers - 1) {
+            const down = curr + pointsPerLayer;
+            ctx.beginPath();
+            ctx.moveTo(projected[curr].x, projected[curr].y);
+            ctx.lineTo(projected[down].x, projected[down].y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0.05, alphaRing * 0.35)})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // 2. Desenhar nós / partículas brilhantes
+      for (let i = 0; i < projected.length; i++) {
+        const pt = projected[i];
+        const dotRadius = Math.max(1.2, 3.5 * pt.scale);
+
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, dotRadius, 0, Math.PI * 2);
+        if (pt.z > 0) {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.shadowColor = '#FF5500';
+          ctx.shadowBlur = 10;
+        } else {
+          ctx.fillStyle = '#FF5500';
+          ctx.shadowBlur = 0;
+        }
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // 3. Núcleo central de brilho
+      const centerGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 90);
+      centerGlow.addColorStop(0, 'rgba(255, 85, 0, 0.35)');
+      centerGlow.addColorStop(0.6, 'rgba(255, 85, 0, 0.08)');
+      centerGlow.addColorStop(1, 'transparent');
+      ctx.fillStyle = centerGlow;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 90, 0, Math.PI * 2);
+      ctx.fill();
+
+      requestAnimationFrame(render3D);
+    }
+    render3D();
   </script>
 </body>
 </html>
