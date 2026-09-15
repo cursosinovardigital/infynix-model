@@ -50,7 +50,6 @@
       .shell { padding-inline: 2rem; }
     }
 
-    /* Utilitários */
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -87,9 +86,7 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
       white-space: nowrap;
     }
-    .btn-pill:hover {
-      transform: translateY(-2px);
-    }
+    .btn-pill:hover { transform: translateY(-2px); }
     .btn-orange {
       background: var(--orange);
       color: #000000;
@@ -104,9 +101,7 @@
       color: #FFFFFF;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
-    .btn-dark:hover {
-      background: #1A1A1A;
-    }
+    .btn-dark:hover { background: #1A1A1A; }
     .btn-outline-white {
       border: 1px solid rgba(255,255,255,0.25);
       background: rgba(255,255,255,0.05);
@@ -117,7 +112,6 @@
       border-color: #FFFFFF;
     }
 
-    /* Header */
     #site-header {
       position: fixed;
       top: 0;
@@ -127,7 +121,6 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: background 0.3s;
     }
     .header-inner {
       display: flex;
@@ -150,9 +143,7 @@
       height: 1.75rem;
       color: var(--orange);
     }
-    .brand-logo span span {
-      color: var(--orange);
-    }
+    .brand-logo span span { color: var(--orange); }
     .header-nav {
       display: none;
       align-items: center;
@@ -168,11 +159,8 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .header-nav a:hover {
-      color: var(--orange);
-    }
+    .header-nav a:hover { color: var(--orange); }
 
-    /* Hero */
     .hero-section {
       position: relative;
       padding-top: 7rem;
@@ -213,7 +201,6 @@
       max-width: 38rem;
     }
 
-    /* Pílulas de Seleção de Serviços Rápidos */
     .service-tags-carousel {
       display: flex;
       flex-wrap: wrap;
@@ -247,7 +234,6 @@
       margin-top: 2rem;
     }
 
-    /* Barra Tática do Rodapé do Hero */
     .tactical-bar {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -257,9 +243,7 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     @media (min-width: 640px) {
-      .tactical-bar {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      .tactical-bar { grid-template-columns: repeat(4, 1fr); }
     }
     .tactical-item {
       display: flex;
@@ -274,9 +258,7 @@
       align-items: center;
       gap: 0.35rem;
     }
-    .tactical-val span {
-      color: var(--orange);
-    }
+    .tactical-val span { color: var(--orange); }
     .tactical-label {
       font-size: 0.72rem;
       color: var(--muted-dark);
@@ -285,7 +267,6 @@
       font-weight: 600;
     }
 
-    /* Simulador de Chat */
     .hero-preview-box {
       border-radius: var(--radius-card);
       background: linear-gradient(145deg, #141720 0%, #0C0D12 100%);
@@ -338,7 +319,6 @@
       box-shadow: 0 6px 18px rgba(255,85,0,0.25);
     }
 
-    /* Faixa Clara: Soluções Completas */
     .light-band {
       background-color: var(--white);
       color: #0F1218;
@@ -409,7 +389,6 @@
       justify-content: space-between;
     }
 
-    /* Objeto 3D Interativo */
     .interactive-stage-section {
       background: radial-gradient(circle at center, #191E2B 0%, #060709 75%);
       padding: 6rem 0;
@@ -417,17 +396,31 @@
       border-bottom: 1px solid var(--border-dark);
       position: relative;
       overflow: hidden;
-      text-align: center;
+    }
+    .stage-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .stage-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
     }
     .stage-canvas-wrap {
       width: 100%;
-      height: 380px;
-      margin: 1.5rem auto;
+      height: 480px;
       position: relative;
-      touch-action: none;
+      touch-action: pan-y;
+      background: rgba(10, 12, 17, 0.4);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-dark);
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.8), 0 20px 40px rgba(0,0,0,0.5);
     }
-    @media (min-width: 768px) {
-      .stage-canvas-wrap { height: 440px; max-width: 800px; }
+    @media (min-width: 1024px) {
+      .stage-canvas-wrap { height: 560px; }
     }
     #infynix-canvas-3d {
       width: 100%;
@@ -449,10 +442,55 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--muted-dark);
-      margin-top: 0.5rem;
+      margin-top: 1.5rem;
     }
 
-    /* Faixa Laranja Magma */
+    /* Seção de Avaliações / Prova Social */
+    .reviews-section {
+      background-color: var(--black);
+      padding: 6rem 0;
+      border-top: 1px solid var(--border-dark);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 768px) {
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .review-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-card);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-stars {
+      color: #FFC107;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .review-text {
+      font-size: 0.95rem;
+      color: #D1D5DB;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .review-author strong {
+      display: block;
+      color: #FFF;
+      font-size: 0.95rem;
+    }
+    .review-author span {
+      font-size: 0.8rem;
+      color: var(--muted-dark);
+    }
+
     .orange-callout-band {
       background: linear-gradient(135deg, #FF5500 0%, #CC3700 100%);
       color: #000000;
@@ -480,11 +518,8 @@
       color: #000000;
       max-width: 44rem;
     }
-    .orange-band-title span {
-      color: #FFFFFF;
-    }
+    .orange-band-title span { color: #FFFFFF; }
 
-    /* FAQ */
     .faq-section {
       background-color: var(--black);
       padding: 6rem 0;
@@ -515,7 +550,6 @@
       line-height: 1.6;
     }
 
-    /* Modais (Diagnóstico e Detalhamento de Serviços) */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -582,7 +616,6 @@
     }
     .form-input:focus { border-color: var(--orange); }
 
-    /* Footer */
     .site-footer {
       background-color: #030405;
       border-top: 1px solid var(--border-dark);
@@ -610,7 +643,7 @@
       <nav class="header-nav">
         <a href="#solucoes">Soluções</a>
         <a href="#nucleo">Tecnologia 3D</a>
-        <a href="#vantagens">Vantagens</a>
+        <a href="#avaliacoes">Avaliações</a>
         <a href="#faq">Perguntas</a>
       </nav>
 
@@ -621,7 +654,7 @@
   </header>
 
   <main>
-    <!-- HERO COMPLETO -->
+    <!-- HERO -->
     <section class="hero-section" id="inicio">
       <div class="shell hero-grid">
         <div>
@@ -634,7 +667,6 @@
             Construímos a esteira de crescimento do seu negócio de ponta a ponta: anúncios cirúrgicos (Google e Meta), landing pages e sites velozes, aplicativos sob medida e AI SDRs que atendem e agendam reuniões em segundos.
           </p>
 
-          <!-- Pílulas Rápidas de Serviços -->
           <div class="service-tags-carousel">
             <button class="service-badge-btn" onclick="openServiceDetail('sdr')">
               <span>🤖 AI SDR no WhatsApp</span> &rarr;
@@ -659,7 +691,6 @@
             </a>
           </div>
 
-          <!-- Barra Tática com Métricas e Credenciais -->
           <div class="tactical-bar">
             <div class="tactical-item">
               <div class="tactical-val">&lt; <span>8s</span></div>
@@ -680,7 +711,6 @@
           </div>
         </div>
 
-        <!-- Card de Demonstração em Tempo Real -->
         <div class="hero-preview-box">
           <div class="preview-header">
             <div>
@@ -708,7 +738,7 @@
       </div>
     </section>
 
-    <!-- FAIXA CLARA: OS 4 PILARES DO ECOSSISTEMA -->
+    <!-- PILARES -->
     <section class="light-band" id="solucoes">
       <div class="shell">
         <div style="max-width: 46rem;">
@@ -722,7 +752,6 @@
         </div>
 
         <div class="cards-grid-4">
-          <!-- Card 1: AI SDR -->
           <div class="white-card" onclick="openServiceDetail('sdr')">
             <div>
               <div class="card-idx">01</div>
@@ -735,7 +764,6 @@
             </div>
           </div>
 
-          <!-- Card 2: Tráfego -->
           <div class="white-card" onclick="openServiceDetail('trafego')">
             <div>
               <div class="card-idx">02</div>
@@ -748,7 +776,6 @@
             </div>
           </div>
 
-          <!-- Card 3: Sites -->
           <div class="white-card" onclick="openServiceDetail('sites')">
             <div>
               <div class="card-idx">03</div>
@@ -761,7 +788,6 @@
             </div>
           </div>
 
-          <!-- Card 4: Aplicativos -->
           <div class="white-card" onclick="openServiceDetail('apps')">
             <div>
               <div class="card-idx">04</div>
@@ -777,29 +803,88 @@
       </div>
     </section>
 
-    <!-- OBJETO 3D INTERATIVO -->
+    <!-- NÚCLEO 3D ESTILO ROBÔ IA -->
     <section class="interactive-stage-section" id="nucleo">
       <div class="shell">
-        <div class="eyebrow eyebrow-dark">Tecnologia Tátil</div>
-        <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFF; margin-top: 0.5rem;">
-          O Núcleo de Engenharia Comercial
-        </h2>
-        <p style="color: var(--muted-dark); max-width: 36rem; margin: 0.75rem auto 0;">
-          Mova o mouse ou arraste com o polegar no smartphone para inclinar e interagir com o motor central de automação 3D.
-        </p>
+        <div class="stage-layout-grid">
+          <div>
+            <div class="eyebrow eyebrow-dark">Tecnologia Tátil &amp; IA</div>
+            <h2 style="font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 900; color: #FFF; margin-top: 0.5rem; line-height: 1.1;">
+              O Núcleo de Engenharia Comercial Interativo
+            </h2>
+            <p style="color: var(--muted-dark); font-size: 1.05rem; margin-top: 1rem; line-height: 1.6;">
+              Nosso motor neurônico 3D simula o fluxo simultâneo de leads, automações e inteligência artificial rodando em tempo real. Mova o cursor ou arraste suavemente ao lado para rotacionar o núcleo robótico em 360°.
+            </p>
+            <div class="stage-badge-hint">
+              <span>&harr; Arraste ou deslize para interagir com o robô 3D</span>
+            </div>
+          </div>
 
-        <div class="stage-canvas-wrap">
-          <canvas id="infynix-canvas-3d"></canvas>
+          <div class="stage-canvas-wrap">
+            <canvas id="infynix-canvas-3d"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES E PROVA SOCIAL -->
+    <section class="reviews-section" id="avaliacoes">
+      <div class="shell">
+        <div style="text-align: center; max-width: 42rem; margin-inline: auto;">
+          <div class="eyebrow eyebrow-dark">Prova Social</div>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: #FFF; margin-top: 0.5rem;">
+            O que dizem os líderes que escalaram com a InfynixHub
+          </h2>
+          <p style="color: var(--muted-dark); font-size: 1rem; margin-top: 0.75rem;">
+            Avaliações reais de empresas B2B e e-commerce que automatizaram seus funis e multiplicaram conversões.
+          </p>
         </div>
 
-        <div class="stage-badge-hint">
-          <span>&harr; Arraste ou incline para rotacionar o núcleo em tempo real</span>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">
+                "Nosso tempo de resposta no WhatsApp caiu de 2 horas para menos de 8 segundos. O AI SDR qualifica os leads perfeitamente antes de passarmos para os closers. O faturamento dobrou em 3 meses."
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Marcelo Mendonça</strong>
+              <span>Diretor Comercial • TechCorp B2B</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">
+                "A gestão de tráfego integrada com as novas landing pages em Next.js reduziu nosso Custo por Aquisição (CPA) em quase 45%. O nível de engenharia e suporte é impecável."
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Camila Siqueira</strong>
+              <span>Head de Marketing • NextGen Retail</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">
+                "Desenvolvemos nosso aplicativo mobile com a equipe e foi a melhor decisão. Entrega rápida, design limpo e infraestrutura robusta. Recomendo demais!"
+              </p>
+            </div>
+            <div class="review-author">
+              <strong>Bruno Alcantara</strong>
+              <span>Fundador • LogiFast Serviços</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FAIXA LARANJA MAGMA -->
-    <section class="orange-callout-band" id="vantagens">
+    <section class="orange-callout-band">
       <div class="shell orange-band-content">
         <div>
           <h2 class="orange-band-title">
@@ -816,7 +901,7 @@
       </div>
     </section>
 
-    <!-- PERGUNTAS FREQUENTES -->
+    <!-- FAQ -->
     <section class="faq-section" id="faq">
       <div class="shell">
         <div style="text-align: center;">
@@ -854,6 +939,7 @@
         <div style="display: flex; gap: 1.5rem; font-size: 0.85rem;">
           <a href="#solucoes" style="color: var(--muted-dark); text-decoration: none;">Soluções</a>
           <a href="#nucleo" style="color: var(--muted-dark); text-decoration: none;">Tecnologia</a>
+          <a href="#avaliacoes" style="color: var(--muted-dark); text-decoration: none;">Avaliações</a>
           <a href="#faq" style="color: var(--muted-dark); text-decoration: none;">FAQ</a>
         </div>
       </div>
@@ -864,7 +950,7 @@
     </div>
   </footer>
 
-  <!-- MODAL 1: DIAGNÓSTICO COMERCIAL -->
+  <!-- MODAL DIAGNÓSTICO -->
   <div id="diag-modal" class="modal-backdrop">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('diag-modal')">&times;</button>
@@ -894,7 +980,7 @@
     </div>
   </div>
 
-  <!-- MODAL 2: DETALHAMENTO DE CADA SERVIÇO -->
+  <!-- MODAL DETALHES DO SERVIÇO -->
   <div id="service-modal" class="modal-backdrop">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('service-modal')">&times;</button>
@@ -915,9 +1001,8 @@
     </div>
   </div>
 
-  <!-- SCRIPTS GLOBAIS & MOTOR 3D -->
+  <!-- SCRIPTS -->
   <script>
-    // Dicionário de Detalhes dos Serviços
     const servicesData = {
       sdr: {
         cat: "Automação & Vendas 24/7",
@@ -969,17 +1054,12 @@
       }
     };
 
-    function openModal(id) {
-      document.getElementById(id).classList.add('active');
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-    }
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
     function openServiceDetail(serviceKey) {
       const data = servicesData[serviceKey];
       if (!data) return;
-
       document.getElementById('svc-category').textContent = data.cat;
       document.getElementById('svc-title').textContent = data.title;
       document.getElementById('svc-desc').textContent = data.desc;
@@ -991,7 +1071,6 @@
         li.textContent = item;
         list.appendChild(li);
       });
-
       openModal('service-modal');
     }
 
@@ -999,14 +1078,14 @@
       btn.addEventListener('click', () => openModal('diag-modal'));
     });
 
-    // MOTOR 3D CANVAS (Núcleo Neural com Interação Inercial)
+    // MOTOR 3D CANVAS (Robô IA Estilo Laocoon)
     const canvas = document.getElementById('infynix-canvas-3d');
     const ctx = canvas.getContext('2d');
     let width, height;
 
-    let targetRotX = 0;
+    let targetRotX = 0.2;
     let targetRotY = 0;
-    let currentRotX = 0;
+    let currentRotX = 0.2;
     let currentRotY = 0;
     let isDragging = false;
     let lastMouseX = 0;
@@ -1020,15 +1099,14 @@
     window.addEventListener('resize', resize3D);
     resize3D();
 
-    // Rastreamento de Mouse / Touch
     window.addEventListener('mousemove', (e) => {
       if (!isDragging) {
         const rect = canvas.getBoundingClientRect();
-        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+        if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
           const normX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
           const normY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-          targetRotY = normX * 0.9;
-          targetRotX = -normY * 0.7;
+          targetRotY = normX * 0.8;
+          targetRotX = 0.2 - normY * 0.5;
         }
       }
     });
@@ -1043,14 +1121,13 @@
       if (isDragging) {
         const dx = e.clientX - lastMouseX;
         const dy = e.clientY - lastMouseY;
-        targetRotY += dx * 0.015;
-        targetRotX -= dy * 0.015;
+        targetRotY += dx * 0.012;
+        targetRotX -= dy * 0.012;
         lastMouseX = e.clientX;
         lastMouseY = e.clientY;
       }
     });
 
-    // Touch mobile
     canvas.addEventListener('touchstart', (e) => {
       isDragging = true;
       lastMouseX = e.touches[0].clientX;
@@ -1061,42 +1138,69 @@
       if (isDragging && e.touches.length > 0) {
         const dx = e.touches[0].clientX - lastMouseX;
         const dy = e.touches[0].clientY - lastMouseY;
-        targetRotY += dx * 0.02;
-        targetRotX -= dy * 0.02;
+        targetRotY += dx * 0.015;
+        targetRotX -= dy * 0.015;
         lastMouseX = e.touches[0].clientX;
         lastMouseY = e.touches[0].clientY;
       }
     }, { passive: true });
 
-    // Pontos do Objeto Geométrico (Cilindro Neural 3D)
-    const points = [];
-    const layers = 6;
-    const pointsPerLayer = 16;
-    const radius = 100;
-    const heightSpan = 140;
-
-    for (let l = 0; l < layers; l++) {
-      const y = (l / (layers - 1) - 0.5) * heightSpan;
-      for (let p = 0; p < pointsPerLayer; p++) {
-        const theta = (p / pointsPerLayer) * Math.PI * 2;
-        points.push({
-          x: Math.cos(theta) * radius,
-          y: y,
-          z: Math.sin(theta) * radius
+    const robotParts = [];
+    function addLine(x1, y1, z1, x2, y2, z2, count = 6) {
+      for (let i = 0; i <= count; i++) {
+        const t = i / count;
+        robotParts.push({
+          x: x1 + (x2 - x1) * t,
+          y: y1 + (y2 - y1) * t,
+          z: z1 + (z2 - z1) * t,
+          type: 'body'
         });
       }
     }
 
-    let globalPulse = 0;
+    const hx = 42, hy = 32, hz = 36;
+    addLine(-hx, -hy, -hz, hx, -hy, -hz);
+    addLine(hx, -hy, -hz, hx, hy, -hz);
+    addLine(hx, hy, -hz, -hx, hy, -hz);
+    addLine(-hx, hy, -hz, -hx, -hy, -hz);
+    addLine(-hx, -hy, hz, hx, -hy, hz);
+    addLine(hx, -hy, hz, hx, hy, hz);
+    addLine(hx, hy, hz, -hx, hy, hz);
+    addLine(-hx, hy, hz, -hx, -hy, hz);
+    addLine(-hx, -hy, -hz, -hx, -hy, hz);
+    addLine(hx, -hy, -hz, hx, -hy, hz);
+    addLine(hx, hy, -hz, hx, hy, hz);
+    addLine(-hx, hy, -hz, -hx, hy, hz);
+
+    robotParts.push({ x: -16, y: -6, z: hz + 2, type: 'eye' });
+    robotParts.push({ x: 16, y: -6, z: hz + 2, type: 'eye' });
+    robotParts.push({ x: 0, y: 10, z: hz + 2, type: 'core' });
+
+    addLine(0, -hy, 0, 0, -hy - 35, 0, 4);
+    robotParts.push({ x: 0, y: -hy - 40, z: 0, type: 'antenna' });
+
+    const tx = 55, ty = 45, tz = 45;
+    addLine(-tx, ty, -tz, tx, ty, -tz);
+    addLine(tx, ty, -tz, tx, ty + 70, -tz);
+    addLine(tx, ty + 70, -tz, -tx, ty + 70, -tz);
+    addLine(-tx, ty + 70, -tz, -tx, ty, -tz);
+    addLine(-tx, ty, tz, tx, ty, tz);
+    addLine(tx, ty, tz, tx, ty + 70, tz);
+    addLine(tx, ty + 70, tz, -tx, ty + 70, tz);
+    addLine(-tx, ty + 70, tz, -tx, ty, tz);
+
+    addLine(-15, hy, -10, -15, ty, -10, 3);
+    addLine(15, hy, -10, 15, ty, -10, 3);
+    addLine(-15, hy, 10, -15, ty, 10, 3);
+    addLine(15, hy, 10, 15, ty, 10, 3);
 
     function render3D() {
       ctx.clearRect(0, 0, width, height);
 
-      currentRotX += (targetRotX - currentRotX) * 0.06;
-      currentRotY += (targetRotY - currentRotY) * 0.06;
+      currentRotX += (targetRotX - currentRotX) * 0.08;
+      currentRotY += (targetRotY - currentRotY) * 0.08;
 
-      targetRotY += 0.006;
-      globalPulse += 0.035;
+      if (!isDragging) { targetRotY += 0.005; }
 
       const cosX = Math.cos(currentRotX);
       const sinX = Math.sin(currentRotX);
@@ -1105,50 +1209,37 @@
 
       const cx = width / 2;
       const cy = height / 2;
-      const fov = 320;
+      const fov = 380;
 
       const projected = [];
-
-      for (let i = 0; i < points.length; i++) {
-        const pt = points[i];
+      for (let i = 0; i < robotParts.length; i++) {
+        const pt = robotParts[i];
         let x1 = pt.x * cosY - pt.z * sinY;
         let z1 = pt.z * cosY + pt.x * sinY;
-
         let y2 = pt.y * cosX - z1 * sinX;
         let z2 = z1 * cosX + pt.y * sinX;
 
-        const wave = Math.sin(globalPulse + pt.y * 0.05) * 6;
-        z2 += wave;
-
-        const distance = fov / (fov + z2 + 200);
+        const distance = fov / (fov + z2 + 250);
         projected.push({
           x: cx + x1 * distance,
           y: cy + y2 * distance,
           scale: distance,
-          z: z2
+          z: z2,
+          type: pt.type
         });
       }
 
-      ctx.lineWidth = 1.2;
-      for (let l = 0; l < layers; l++) {
-        const start = l * pointsPerLayer;
-        for (let p = 0; p < pointsPerLayer; p++) {
-          const curr = start + p;
-          const next = start + ((p + 1) % pointsPerLayer);
-
-          const alphaRing = (projected[curr].scale - 0.5) * 1.5;
-          ctx.beginPath();
-          ctx.moveTo(projected[curr].x, projected[curr].y);
-          ctx.lineTo(projected[next].x, projected[next].y);
-          ctx.strokeStyle = `rgba(255, 85, 0, ${Math.max(0.08, alphaRing * 0.6)})`;
-          ctx.stroke();
-
-          if (l < layers - 1) {
-            const down = curr + pointsPerLayer;
+      ctx.lineWidth = 1.4;
+      for (let i = 0; i < robotParts.length; i += 5) {
+        for (let j = i + 1; j < Math.min(i + 6, robotParts.length); j++) {
+          const p1 = projected[i];
+          const p2 = projected[j];
+          const alpha = (p1.scale - 0.4) * 0.7;
+          if (alpha > 0.05) {
             ctx.beginPath();
-            ctx.moveTo(projected[curr].x, projected[curr].y);
-            ctx.lineTo(projected[down].x, projected[down].y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0.05, alphaRing * 0.35)})`;
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(255, 85, 0, ${alpha * 0.5})`;
             ctx.stroke();
           }
         }
@@ -1156,14 +1247,21 @@
 
       for (let i = 0; i < projected.length; i++) {
         const pt = projected[i];
-        const dotRadius = Math.max(1.2, 3.5 * pt.scale);
+        const dotRadius = pt.type === 'eye' ? Math.max(3, 6 * pt.scale) : 
+                          pt.type === 'core' ? Math.max(4, 7 * pt.scale) : 
+                          Math.max(1.5, 3 * pt.scale);
 
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, dotRadius, 0, Math.PI * 2);
-        if (pt.z > 0) {
+
+        if (pt.type === 'eye' || pt.type === 'core') {
           ctx.fillStyle = '#FFFFFF';
           ctx.shadowColor = '#FF5500';
-          ctx.shadowBlur = 10;
+          ctx.shadowBlur = 18;
+        } else if (pt.z > 0) {
+          ctx.fillStyle = '#FFAA80';
+          ctx.shadowColor = '#FF5500';
+          ctx.shadowBlur = 8;
         } else {
           ctx.fillStyle = '#FF5500';
           ctx.shadowBlur = 0;
@@ -1172,13 +1270,13 @@
         ctx.shadowBlur = 0;
       }
 
-      const centerGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 90);
-      centerGlow.addColorStop(0, 'rgba(255, 85, 0, 0.35)');
-      centerGlow.addColorStop(0.6, 'rgba(255, 85, 0, 0.08)');
+      const centerGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 140);
+      centerGlow.addColorStop(0, 'rgba(255, 85, 0, 0.28)');
+      centerGlow.addColorStop(0.7, 'rgba(255, 85, 0, 0.05)');
       centerGlow.addColorStop(1, 'transparent');
       ctx.fillStyle = centerGlow;
       ctx.beginPath();
-      ctx.arc(cx, cy, 90, 0, Math.PI * 2);
+      ctx.arc(cx, cy, 140, 0, Math.PI * 2);
       ctx.fill();
 
       requestAnimationFrame(render3D);
