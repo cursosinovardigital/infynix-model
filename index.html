@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFYNIXHUB — Engenharia de Vendas, Tráfego &amp; AI SDR</title>
-  <meta name="description" content="Engenharia de crescimento comercial full-funnel: Tráfego pago Google e Meta Ads, landing pages de alta conversão e AI SDR integrado ao WhatsApp 24/7." />
+  <title>INFYNIXHUB — AI SDR, Tráfego Pago, Sites &amp; Aplicativos</title>
+  <meta name="description" content="Engenharia de crescimento comercial full-funnel: Agentes de IA SDR no WhatsApp, tráfego pago de alta intenção, sites de alta conversão e desenvolvimento de aplicativos." />
   <meta name="theme-color" content="#FF5500" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@
       .shell { padding-inline: 2rem; }
     }
 
-    /* Utilitários Visuais */
+    /* Utilitários */
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -117,13 +117,13 @@
       border-color: #FFFFFF;
     }
 
-    /* 1. Header Fixo */
+    /* Header */
     #site-header {
       position: fixed;
       top: 0;
       inset-inline: 0;
       z-index: 90;
-      background: rgba(6, 7, 9, 0.85);
+      background: rgba(6, 7, 9, 0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -172,7 +172,7 @@
       color: var(--orange);
     }
 
-    /* 2. Hero (Faixa Preta Noturna com Energia Laranja) */
+    /* Hero */
     .hero-section {
       position: relative;
       padding-top: 7rem;
@@ -195,7 +195,7 @@
       }
     }
     .hero-title {
-      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      font-size: clamp(2.4rem, 5.2vw, 4.2rem);
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -0.03em;
@@ -207,30 +207,85 @@
       text-shadow: 0 0 35px rgba(255, 85, 0, 0.4);
     }
     .hero-desc {
-      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
       color: var(--muted-dark);
-      margin-top: 1.5rem;
-      max-width: 36rem;
+      margin-top: 1.25rem;
+      max-width: 38rem;
     }
+
+    /* Pílulas de Seleção de Serviços Rápidos */
+    .service-tags-carousel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .service-badge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .service-badge-btn:hover {
+      border-color: var(--orange);
+      background: var(--orange-soft);
+      color: #FFFFFF;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       margin-top: 2rem;
     }
-    .badge-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+
+    /* Barra Tática do Rodapé do Hero */
+    .tactical-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
       margin-top: 2.5rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.85rem;
-      color: var(--muted-dark);
     }
-    .stars { color: var(--orange); }
+    @media (min-width: 640px) {
+      .tactical-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .tactical-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .tactical-val {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .tactical-val span {
+      color: var(--orange);
+    }
+    .tactical-label {
+      font-size: 0.72rem;
+      color: var(--muted-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
 
-    /* Card Interativo Hero (Mobile/Desktop) */
+    /* Simulador de Chat */
     .hero-preview-box {
       border-radius: var(--radius-card);
       background: linear-gradient(145deg, #141720 0%, #0C0D12 100%);
@@ -283,7 +338,7 @@
       box-shadow: 0 6px 18px rgba(255,85,0,0.25);
     }
 
-    /* 3. FAIXA CLARA / EDITORIAL BRANCA (Contraste Máximo) */
+    /* Faixa Clara: Soluções Completas */
     .light-band {
       background-color: var(--white);
       color: #0F1218;
@@ -297,24 +352,28 @@
       letter-spacing: -0.02em;
       color: #060709;
     }
-    .cards-grid-3 {
+    .cards-grid-4 {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 3.5rem;
     }
     @media (min-width: 768px) {
-      .cards-grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .cards-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .cards-grid-4 { grid-template-columns: repeat(4, 1fr); }
     }
     .white-card {
       background: var(--surface-light);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-card);
-      padding: 2rem;
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
     }
     .white-card:hover {
       transform: translateY(-6px);
@@ -322,25 +381,35 @@
       border-color: var(--orange);
     }
     .card-idx {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .white-card h3 {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: #060709;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
     .white-card p {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--muted-light);
       line-height: 1.55;
     }
+    .card-footer-tag {
+      margin-top: 1.75rem;
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    /* 4. SEÇÃO DO OBJETO INTERATIVO 3D (EFEITO CAN / NÚCLEO INFYNIX) */
+    /* Objeto 3D Interativo */
     .interactive-stage-section {
       background: radial-gradient(circle at center, #191E2B 0%, #060709 75%);
       padding: 6rem 0;
@@ -383,7 +452,7 @@
       margin-top: 0.5rem;
     }
 
-    /* 5. FAIXA LARANJA MAGMA ENERGÉTICA (Callout de Alto Impacto) */
+    /* Faixa Laranja Magma */
     .orange-callout-band {
       background: linear-gradient(135deg, #FF5500 0%, #CC3700 100%);
       color: #000000;
@@ -409,13 +478,13 @@
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: #000000;
-      max-width: 42rem;
+      max-width: 44rem;
     }
     .orange-band-title span {
       color: #FFFFFF;
     }
 
-    /* 6. FAQ & Diagnóstico (Preto Profundo) */
+    /* FAQ */
     .faq-section {
       background-color: var(--black);
       padding: 6rem 0;
@@ -446,8 +515,8 @@
       line-height: 1.6;
     }
 
-    /* 7. Modal de Diagnóstico */
-    #diag-modal {
+    /* Modais (Diagnóstico e Detalhamento de Serviços) */
+    .modal-backdrop {
       position: fixed;
       inset: 0;
       z-index: 200;
@@ -462,21 +531,23 @@
       transition: opacity 0.3s ease;
     }
     @media (min-width: 640px) {
-      #diag-modal { align-items: center; }
+      .modal-backdrop { align-items: center; }
     }
-    #diag-modal.active {
+    .modal-backdrop.active {
       opacity: 1;
       pointer-events: auto;
     }
     .modal-box {
       width: 100%;
-      max-width: 32rem;
+      max-width: 34rem;
       background: #0E1015;
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-card);
       padding: 2rem;
       box-shadow: 0 30px 60px rgba(0,0,0,0.9);
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
     .modal-close {
       position: absolute;
@@ -491,7 +562,7 @@
       cursor: pointer;
       display: grid;
       place-items: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
     .modal-form {
       display: flex;
@@ -523,7 +594,7 @@
 </head>
 <body>
 
-  <!-- 1. Header Fixo -->
+  <!-- Header Fixo -->
   <header id="site-header">
     <div class="shell header-inner">
       <a href="#inicio" class="brand-logo" aria-label="InfynixHub Início">
@@ -550,18 +621,34 @@
   </header>
 
   <main>
-    <!-- 2. HERO: FAIXA ESCURA COM ENERGIA LARANJA -->
+    <!-- HERO COMPLETO -->
     <section class="hero-section" id="inicio">
       <div class="shell hero-grid">
         <div>
-          <div class="eyebrow eyebrow-dark">Engenharia de Crescimento &amp; AI SDR</div>
+          <div class="eyebrow eyebrow-dark">Assessoria Completa Full-Funnel</div>
           <h1 class="hero-title">
-            Tráfego pago qualificado. <br/>
+            Tráfego, Páginas, Apps e <br/>
             Agentes que vendem no <span class="glow-orange">WhatsApp 24/7</span>.
           </h1>
           <p class="hero-desc">
-            Integramos anúncios no Google e Meta a páginas ultra-rápidas e robôs autônomos que abordam, filtram e colocam reuniões prontas na agenda do seu time de vendas.
+            Construímos a esteira de crescimento do seu negócio de ponta a ponta: anúncios cirúrgicos (Google e Meta), landing pages e sites velozes, aplicativos sob medida e AI SDRs que atendem e agendam reuniões em segundos.
           </p>
+
+          <!-- Pílulas Rápidas de Serviços -->
+          <div class="service-tags-carousel">
+            <button class="service-badge-btn" onclick="openServiceDetail('sdr')">
+              <span>🤖 AI SDR no WhatsApp</span> &rarr;
+            </button>
+            <button class="service-badge-btn" onclick="openServiceDetail('trafego')">
+              <span>🎯 Gestão de Tráfego</span> &rarr;
+            </button>
+            <button class="service-badge-btn" onclick="openServiceDetail('sites')">
+              <span>⚡ Sites &amp; Landing Pages</span> &rarr;
+            </button>
+            <button class="service-badge-btn" onclick="openServiceDetail('apps')">
+              <span>📱 Aplicativos Mobile</span> &rarr;
+            </button>
+          </div>
 
           <div class="hero-actions">
             <button class="btn-pill btn-orange open-diag-btn">
@@ -572,9 +659,24 @@
             </a>
           </div>
 
-          <div class="badge-bar">
-            <div class="stars">★★★★★</div>
-            <div>Mais de <strong>350.000 leads</strong> respondidos em menos de 8 segundos.</div>
+          <!-- Barra Tática com Métricas e Credenciais -->
+          <div class="tactical-bar">
+            <div class="tactical-item">
+              <div class="tactical-val">&lt; <span>8s</span></div>
+              <div class="tactical-label">Primeira Resposta</div>
+            </div>
+            <div class="tactical-item">
+              <div class="tactical-val">+<span>350K</span></div>
+              <div class="tactical-label">Leads Triados</div>
+            </div>
+            <div class="tactical-item">
+              <div class="tactical-val"><span>100%</span></div>
+              <div class="tactical-label">API Oficial Meta</div>
+            </div>
+            <div class="tactical-item">
+              <div class="tactical-val"><span>iOS</span> &bull; <span>Android</span></div>
+              <div class="tactical-label">Apps Nativos &amp; Web</div>
+            </div>
           </div>
         </div>
 
@@ -585,92 +687,107 @@
               <span class="status-dot"></span>
               <strong style="font-size: 0.85rem; color: #FFF;">AI SDR INFYNIX ONLINE</strong>
             </div>
-            <span style="font-size: 0.75rem; color: var(--orange); font-weight: 700;">WHATSAPP CLOUD API</span>
+            <span style="font-size: 0.75rem; color: var(--orange); font-weight: 700;">META CLOUD API</span>
           </div>
 
           <div class="sim-chat">
             <div class="sim-msg sim-lead">
-              Olá! Vi o anúncio de vocês no Google e preciso qualificar os contatos que chegam no meu comercial.
+              Olá! Vi o anúncio de vocês e preciso criar uma landing page com tráfego e atendimento automático no WhatsApp.
             </div>
             <div class="sim-msg sim-ai">
-              Perfeito! Qual é o faturamento médio atual da sua operação e quantas oportunidades chegam por dia?
+              Perfeito! Desenvolvemos o site em Next.js de alta conversão integrado com campanhas de Google/Meta e o nosso AI SDR ativo. Qual é o seu segmento e faturamento mensal?
             </div>
             <div class="sim-msg sim-lead">
-              Faturamos cerca de R$ 90 mil/mês e chegam 25 leads diários sem triagem rápida.
+              Somos uma consultoria B2B faturando R$ 120 mil/mês. Perdemos muito tempo com curiosos.
             </div>
             <div class="sim-msg sim-ai">
-              Entendido! Nossa esteira vai agendar os leads qualificados direto no seu Google Calendar. Posso reservar 15 min amanhã às 14h com nosso estrategista sênior?
+              Excelente! Nosso agente filtra os critérios BANT e agenda a call direto na sua agenda. Posso reservar 15 min amanhã às 14h com nosso estrategista?
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. FAIXA CLARA: CONTRASTE EDITORIAL BRANCO -->
+    <!-- FAIXA CLARA: OS 4 PILARES DO ECOSSISTEMA -->
     <section class="light-band" id="solucoes">
       <div class="shell">
-        <div style="max-width: 44rem;">
+        <div style="max-width: 46rem;">
           <div class="eyebrow eyebrow-light">O Ecossistema Completo</div>
           <h2 class="light-title" style="margin-top: 0.75rem;">
-            A engrenagem comercial que fecha a torneira de leads perdidos.
+            Quatro frentes unificadas para a sua empresa não perder receita.
           </h2>
           <p style="font-size: 1.1rem; color: var(--muted-light); margin-top: 1rem;">
-            O modelo comum queima verba em anúncios para jogar contatos em sites lentos onde a resposta demora 4 horas. Nós entregamos um funil integrado.
+            Clique em qualquer um dos blocos para ver o detalhamento técnico e a esteira de entrega de cada solução.
           </p>
         </div>
 
-        <div class="cards-grid-3">
-          <!-- Card 1 -->
-          <div class="white-card">
+        <div class="cards-grid-4">
+          <!-- Card 1: AI SDR -->
+          <div class="white-card" onclick="openServiceDetail('sdr')">
             <div>
               <div class="card-idx">01</div>
-              <h3>Tráfego de Alta Intenção</h3>
-              <p>Campanhas no Google Search prontas para converter quem já procura pelo seu serviço e esteiras no Meta Ads para escala e autoridade.</p>
+              <h3>AI SDR no WhatsApp</h3>
+              <p>Agente treinado com linguagem humanizada. Atende instantaneamente, qualifica orçamento e agenda reuniões no CRM.</p>
             </div>
-            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
-              Google Ads &bull; Meta Ads &bull; CAPI Server
+            <div class="card-footer-tag">
+              <span>WhatsApp Cloud &bull; CRM</span>
+              <span>Saiba mais &rarr;</span>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="white-card">
+          <!-- Card 2: Tráfego -->
+          <div class="white-card" onclick="openServiceDetail('trafego')">
             <div>
               <div class="card-idx">02</div>
-              <h3>Páginas de Alta Conversão</h3>
-              <p>Desenvolvimento mobile-first, tempo de carregamento inferior a 1.2 segundos, design moderno e copywriting orientado à resposta imediata.</p>
+              <h3>Gestão de Tráfego</h3>
+              <p>Campanhas de alta intenção no Google Search e tração de marca no Meta Ads com foco total em custo por reunião agendada.</p>
             </div>
-            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
-              Carregamento &lt; 1.2s &bull; GTM &bull; GA4
+            <div class="card-footer-tag">
+              <span>Google &bull; Meta Ads</span>
+              <span>Saiba mais &rarr;</span>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="white-card">
+          <!-- Card 3: Sites -->
+          <div class="white-card" onclick="openServiceDetail('sites')">
             <div>
               <div class="card-idx">03</div>
-              <h3>AI SDR no WhatsApp</h3>
-              <p>Agente inteligente treinado nas regras do seu negócio. Faz triagem BANT (orçamento e perfil) e agenda a call no calendário do seu time.</p>
+              <h3>Sites &amp; Landing Pages</h3>
+              <p>Páginas de ultra-conversão carregando em menos de 1.2s, pensadas para o clique e totalmente integradas aos robôs.</p>
             </div>
-            <div style="margin-top: 2rem; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: var(--orange);">
-              Atendimento &lt; 8s &bull; Cal.com &bull; CRM
+            <div class="card-footer-tag">
+              <span>Next.js &bull; CAPI Server</span>
+              <span>Saiba mais &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Aplicativos -->
+          <div class="white-card" onclick="openServiceDetail('apps')">
+            <div>
+              <div class="card-idx">04</div>
+              <h3>Aplicativos Mobile</h3>
+              <p>Construção de apps modernos e sistemas web para colocar o seu serviço na palma da mão dos seus clientes e colaboradores.</p>
+            </div>
+            <div class="card-footer-tag">
+              <span>iOS &bull; Android &bull; WebApp</span>
+              <span>Saiba mais &rarr;</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. SEÇÃO DO OBJETO 3D INTERATIVO (NÚCLEO NEURAL INFYNIX) -->
+    <!-- OBJETO 3D INTERATIVO -->
     <section class="interactive-stage-section" id="nucleo">
       <div class="shell">
         <div class="eyebrow eyebrow-dark">Tecnologia Tátil</div>
         <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #FFF; margin-top: 0.5rem;">
-          O Núcleo Neural da Operação
+          O Núcleo de Engenharia Comercial
         </h2>
         <p style="color: var(--muted-dark); max-width: 36rem; margin: 0.75rem auto 0;">
-          Mova o cursor ou arraste com o dedo no celular para inclinar e interagir com o motor central de automação 3D.
+          Mova o mouse ou arraste com o polegar no smartphone para inclinar e interagir com o motor central de automação 3D.
         </p>
 
-        <!-- Canvas 3D Interativo -->
         <div class="stage-canvas-wrap">
           <canvas id="infynix-canvas-3d"></canvas>
         </div>
@@ -681,15 +798,15 @@
       </div>
     </section>
 
-    <!-- 5. FAIXA LARANJA MAGMA (CHAMADA DIRETA PARA AÇÃO) -->
+    <!-- FAIXA LARANJA MAGMA -->
     <section class="orange-callout-band" id="vantagens">
       <div class="shell orange-band-content">
         <div>
           <h2 class="orange-band-title">
-            Chega de esperar segunda-feira para <span>escalar suas vendas</span>.
+            Chega de esperar segunda-feira para <span>escalar sua operação</span>.
           </h2>
           <p style="font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem; color: rgba(0,0,0,0.85);">
-            Estrutura implementada, validada e gerando reuniões comerciais em menos de 15 dias úteis.
+            Toda a esteira de tráfego, páginas, aplicativo e inteligência artificial pronta e homologada em até 15 dias úteis.
           </p>
         </div>
 
@@ -699,7 +816,7 @@
       </div>
     </section>
 
-    <!-- 6. PERGUNTAS FREQUENTES & FAQ -->
+    <!-- PERGUNTAS FREQUENTES -->
     <section class="faq-section" id="faq">
       <div class="shell">
         <div style="text-align: center;">
@@ -709,18 +826,18 @@
 
         <div class="faq-grid">
           <div class="faq-card">
-            <h4>A Inteligência Artificial substitui meu vendedor humano?</h4>
-            <p>Não. Ela assume todo o trabalho repetitivo e cansativo de responder rápido, tirar dúvidas e filtrar quem não tem perfil de compra. O seu vendedor só entra na reunião com quem está pronto para fechar.</p>
+            <h4>Posso contratar apenas o tráfego, o site ou o app separadamente?</h4>
+            <p>Sim! Nossos serviços são modulares. Você pode contratar frentes específicas como criação de sites, tráfego ou desenvolvimento de app, ou o ecossistema completo integrado.</p>
           </div>
 
           <div class="faq-card">
-            <h4>Preciso mudar de número de WhatsApp?</h4>
-            <p>Não! Integramos a inteligência artificial diretamente à API Oficial da Meta (Cloud API), garantindo segurança total contra bloqueios e mantendo o histórico do seu negócio.</p>
+            <h4>A Inteligência Artificial substitui o vendedor humano?</h4>
+            <p>Não. Ela assume todo o trabalho repetitivo e cansativo de responder rápido, tirar dúvidas e filtrar quem tem orçamento. O seu vendedor só entra em chamadas com decisores qualificados.</p>
           </div>
 
           <div class="faq-card">
-            <h4>Vocês cuidam dos anúncios também?</h4>
-            <p>Sim! Somos uma assessoria completa full-funnel: criamos as campanhas no Google e Meta Ads, desenhamos a landing page e programamos o AI SDR para fechar o ciclo.</p>
+            <h4>Preciso mudar meu número de WhatsApp?</h4>
+            <p>Não! Conectamos a IA diretamente à API Oficial da Meta (Cloud API), garantindo segurança total contra banimentos e mantendo o número institucional que sua base já conhece.</p>
           </div>
         </div>
       </div>
@@ -741,27 +858,34 @@
         </div>
       </div>
       <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-        <div>&copy; 2026 INFYNIXHUB. Engenharia de Vendas &amp; Crescimento.</div>
+        <div>&copy; 2026 INFYNIXHUB. Engenharia de Vendas, Tráfego, Sites &amp; Aplicativos.</div>
         <div style="color: var(--orange); font-weight: 700;">Guarulhos &bull; São Paulo</div>
       </div>
     </div>
   </footer>
 
-  <!-- Modal de Diagnóstico Comercial -->
-  <div id="diag-modal">
+  <!-- MODAL 1: DIAGNÓSTICO COMERCIAL -->
+  <div id="diag-modal" class="modal-backdrop">
     <div class="modal-box">
-      <button class="modal-close" id="close-modal-btn">&times;</button>
+      <button class="modal-close" onclick="closeModal('diag-modal')">&times;</button>
       <div class="eyebrow eyebrow-dark">Diagnóstico Comercial</div>
-      <h3 style="font-size: 1.6rem; font-weight: 900; color: #FFF; margin-top: 0.5rem;">Agende sua Sessão</h3>
-      <p style="font-size: 0.85rem; color: var(--muted-dark); margin-top: 0.25rem;">Receba a análise da sua esteira de vendas e tráfego.</p>
+      <h3 style="font-size: 1.6rem; font-weight: 900; color: #FFF; margin-top: 0.5rem;">Agende sua Análise</h3>
+      <p style="font-size: 0.85rem; color: var(--muted-dark); margin-top: 0.25rem;">Entenda como estruturar seus canais de vendas com tecnologia.</p>
 
-      <form class="modal-form" onsubmit="event.preventDefault(); alert('Solicitação recebida! Nosso especialista entrará em contato via WhatsApp.'); document.getElementById('diag-modal').classList.remove('active');">
+      <form class="modal-form" onsubmit="event.preventDefault(); alert('Solicitação recebida! Nosso estrategista entrará em contato via WhatsApp em minutos.'); closeModal('diag-modal');">
         <input type="text" required placeholder="Seu Nome Completo" class="form-input" />
-        <input type="tel" required placeholder="WhatsApp Corporativo (com DDD)" class="form-input" />
+        <input type="tel" required placeholder="WhatsApp com DDD" class="form-input" />
         <select class="form-input" style="background-color: #060709;">
-          <option>Faturamento: Até R$ 50 mil / mês</option>
-          <option>Faturamento: R$ 50 mil a R$ 150 mil / mês</option>
-          <option>Faturamento: Acima de R$ 150 mil / mês</option>
+          <option>Serviço Principal: Ecossistema Completo (Tráfego + IA + Site)</option>
+          <option>Serviço Principal: Somente AI SDR no WhatsApp</option>
+          <option>Serviço Principal: Gestão de Tráfego (Google/Meta Ads)</option>
+          <option>Serviço Principal: Criação de Site / Landing Page</option>
+          <option>Serviço Principal: Desenvolvimento de Aplicativo Mobile</option>
+        </select>
+        <select class="form-input" style="background-color: #060709;">
+          <option>Faturamento Atual: Até R$ 50 mil / mês</option>
+          <option>Faturamento Atual: R$ 50 mil a R$ 150 mil / mês</option>
+          <option>Faturamento Atual: Acima de R$ 150 mil / mês</option>
         </select>
         <button type="submit" class="btn-pill btn-orange" style="margin-top: 0.5rem; width: 100%;">
           Enviar Dados para Análise
@@ -770,21 +894,112 @@
     </div>
   </div>
 
-  <!-- SCRIPT: INTERATIVIDADE 3D TÁTIL (Efeito Lata Soda / Núcleo Infynix) -->
+  <!-- MODAL 2: DETALHAMENTO DE CADA SERVIÇO -->
+  <div id="service-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('service-modal')">&times;</button>
+      <div class="eyebrow eyebrow-dark" id="svc-category">Serviço Especializado</div>
+      <h3 id="svc-title" style="font-size: 1.7rem; font-weight: 900; color: #FFF; margin-top: 0.5rem;"></h3>
+      <p id="svc-desc" style="font-size: 0.95rem; color: var(--muted-dark); margin-top: 0.75rem; line-height: 1.6;"></p>
+
+      <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-dark); padding-top: 1.25rem;">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--orange); font-weight: 800; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Entregáveis &amp; Escopo</h4>
+        <ul id="svc-deliverables" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #E2E8F0;"></ul>
+      </div>
+
+      <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem;">
+        <button class="btn-pill btn-orange" style="width: 100%;" onclick="closeModal('service-modal'); openModal('diag-modal');">
+          Solicitar Proposta Desse Serviço
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS GLOBAIS & MOTOR 3D -->
   <script>
-    // Controle do Modal
-    const modal = document.getElementById('diag-modal');
+    // Dicionário de Detalhes dos Serviços
+    const servicesData = {
+      sdr: {
+        cat: "Automação & Vendas 24/7",
+        title: "AI SDR para WhatsApp",
+        desc: "Implementamos um agente autônomo com inteligência artificial treinado especificamente nas regras da sua empresa para atender, qualificar e agendar reuniões.",
+        items: [
+          "✓ Conexão via WhatsApp Cloud API Oficial (Sem risco de bloqueios)",
+          "✓ Qualificação ativa BANT (Orçamento, segmento e urgência)",
+          "✓ Sincronização automática com Cal.com ou Google Calendar",
+          "✓ Atualização em tempo real no seu CRM (HubSpot, RD Station ou Pipedrive)",
+          "✓ Alerta imediato no WhatsApp do seu vendedor com o lead pronto"
+        ]
+      },
+      trafego: {
+        cat: "Aquisição de Alta Intenção",
+        title: "Gestão de Tráfego Pago (Google & Meta)",
+        desc: "Criamos e operamos campanhas de performance orientadas a trazer clientes qualificados no momento exato de compra, otimizando o custo por reunião gerada.",
+        items: [
+          "✓ Campanhas no Google Search capturando pesquisas ativas de compra",
+          "✓ Esteiras de Meta Ads (Instagram/Facebook) para autoridade e escala",
+          "✓ Implementação de API de Conversões Server-Side (Meta CAPI & GA4)",
+          "✓ Remarketing dinâmico para reengajar quem visitou e não converteu",
+          "✓ Relatórios claros focados em CAC e Retorno sobre Investimento"
+        ]
+      },
+      sites: {
+        cat: "Desenvolvimento Web & Conversão",
+        title: "Websites & Landing Pages de Alta Performance",
+        desc: "Desenvolvemos páginas focadas em velocidade máxima e persuasão direta. O visitante não encontra distrações e é conduzido instantaneamente à conversão.",
+        items: [
+          "✓ Tempo de carregamento inferior a 1.2 segundos (Mobile First)",
+          "✓ Copywriting estratégico estruturado para resposta imediata",
+          "✓ Integração nativa com gatilhos de WhatsApp e formulários ágeis",
+          "✓ Rastreamento completo via Google Tag Manager (GTM) e Meta Pixel",
+          "✓ Arquitetura visual moderna com alto padrão de autoridade"
+        ]
+      },
+      apps: {
+        cat: "Engenharia de Software Mobile",
+        title: "Desenvolvimento de Aplicativos",
+        desc: "Transformamos ideias em aplicativos fluidos e escaláveis para iOS, Android e plataformas web, integrados a bancos de dados, pagamentos e notificações.",
+        items: [
+          "✓ Desenvolvimento de Apps Nativos ou Híbridos (iOS & Android)",
+          "✓ Plataformas WebApps e portais administrativos exclusivos",
+          "✓ Integrações completas de APIs, pagamentos (Pix/Cartão) e autenticação",
+          "✓ Design UI/UX moderno projetado para máxima usabilidade",
+          "✓ Publicação e suporte na Apple App Store e Google Play Store"
+        ]
+      }
+    };
+
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function openServiceDetail(serviceKey) {
+      const data = servicesData[serviceKey];
+      if (!data) return;
+
+      document.getElementById('svc-category').textContent = data.cat;
+      document.getElementById('svc-title').textContent = data.title;
+      document.getElementById('svc-desc').textContent = data.desc;
+
+      const list = document.getElementById('svc-deliverables');
+      list.innerHTML = '';
+      data.items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+      });
+
+      openModal('service-modal');
+    }
+
     document.querySelectorAll('.open-diag-btn').forEach(btn => {
-      btn.addEventListener('click', () => modal.classList.add('active'));
-    });
-    document.getElementById('close-modal-btn').addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
+      btn.addEventListener('click', () => openModal('diag-modal'));
     });
 
-    // MOTOR 3D CANVAS (Núcleo Neural Rotativo com Física de Cursor)
+    // MOTOR 3D CANVAS (Núcleo Neural com Interação Inercial)
     const canvas = document.getElementById('infynix-canvas-3d');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -853,7 +1068,7 @@
       }
     }, { passive: true });
 
-    // Pontos do Objeto Geométrico (Cilindro / Núcleo Neural 3D)
+    // Pontos do Objeto Geométrico (Cilindro Neural 3D)
     const points = [];
     const layers = 6;
     const pointsPerLayer = 16;
@@ -867,9 +1082,7 @@
         points.push({
           x: Math.cos(theta) * radius,
           y: y,
-          z: Math.sin(theta) * radius,
-          origX: Math.cos(theta) * radius,
-          origZ: Math.sin(theta) * radius
+          z: Math.sin(theta) * radius
         });
       }
     }
@@ -879,11 +1092,9 @@
     function render3D() {
       ctx.clearRect(0, 0, width, height);
 
-      // Interpolação suave do ângulo (Lerp estilo Soda)
       currentRotX += (targetRotX - currentRotX) * 0.06;
       currentRotY += (targetRotY - currentRotY) * 0.06;
 
-      // Auto rotação contínua sutil
       targetRotY += 0.006;
       globalPulse += 0.035;
 
@@ -898,19 +1109,14 @@
 
       const projected = [];
 
-      // Projeção 3D -> 2D
       for (let i = 0; i < points.length; i++) {
         const pt = points[i];
-
-        // Rotação Y
         let x1 = pt.x * cosY - pt.z * sinY;
         let z1 = pt.z * cosY + pt.x * sinY;
 
-        // Rotação X
         let y2 = pt.y * cosX - z1 * sinX;
         let z2 = z1 * cosX + pt.y * sinX;
 
-        // Efeito de pulso de dados no núcleo
         const wave = Math.sin(globalPulse + pt.y * 0.05) * 6;
         z2 += wave;
 
@@ -923,7 +1129,6 @@
         });
       }
 
-      // 1. Desenhar conexões neurais / malha cilíndrica
       ctx.lineWidth = 1.2;
       for (let l = 0; l < layers; l++) {
         const start = l * pointsPerLayer;
@@ -931,7 +1136,6 @@
           const curr = start + p;
           const next = start + ((p + 1) % pointsPerLayer);
 
-          // Linha do anel
           const alphaRing = (projected[curr].scale - 0.5) * 1.5;
           ctx.beginPath();
           ctx.moveTo(projected[curr].x, projected[curr].y);
@@ -939,7 +1143,6 @@
           ctx.strokeStyle = `rgba(255, 85, 0, ${Math.max(0.08, alphaRing * 0.6)})`;
           ctx.stroke();
 
-          // Linha vertical conectando camadas
           if (l < layers - 1) {
             const down = curr + pointsPerLayer;
             ctx.beginPath();
@@ -951,7 +1154,6 @@
         }
       }
 
-      // 2. Desenhar nós / partículas brilhantes
       for (let i = 0; i < projected.length; i++) {
         const pt = projected[i];
         const dotRadius = Math.max(1.2, 3.5 * pt.scale);
@@ -970,7 +1172,6 @@
         ctx.shadowBlur = 0;
       }
 
-      // 3. Núcleo central de brilho
       const centerGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 90);
       centerGlow.addColorStop(0, 'rgba(255, 85, 0, 0.35)');
       centerGlow.addColorStop(0.6, 'rgba(255, 85, 0, 0.08)');
